@@ -7,6 +7,7 @@ public class ball_controller : MonoBehaviour
     public Rigidbody2D rb;
 
     [SerializeField] GameObject arrow;
+    [SerializeField] GameObject chargeBar;
     [SerializeField] Vector3 spawnpoint;
     [SerializeField] float DragMA; //Mid Air Linear drag
     [SerializeField] float DragOG; //On Ground Linear drag
@@ -40,6 +41,8 @@ public class ball_controller : MonoBehaviour
 
             if(shot_mode == 1){
                 shot_mode = 2;
+                GameObject summoned_chargeBar = Instantiate(chargeBar, gameObject.transform);
+                summoned_chargeBar.transform.localPosition = new Vector3(-0.5f, 1.0f, 0);
             }
 
             if(shot_mode == 0){
@@ -53,7 +56,25 @@ public class ball_controller : MonoBehaviour
         if(Input.GetKey(KeyCode.C) && shot_mode == 2)
         {
             if(smash_power <= max_power){
-                smash_power += Time.deltaTime * 5;
+                smash_power += Time.deltaTime * 2;
+            }
+
+            GameObject chargebar = GameObject.FindWithTag("Chargebar");
+
+            if(smash_power / max_power <= 0.2f){
+                chargebar.transform.GetChild(0).gameObject.SetActive(true);
+            }
+            else if(smash_power / max_power <= 0.4f){
+                chargebar.transform.GetChild(1).gameObject.SetActive(true);
+            }
+            else if(smash_power / max_power <= 0.6f){
+                chargebar.transform.GetChild(2).gameObject.SetActive(true);
+            }
+            else if(smash_power / max_power <= 0.8f){
+                chargebar.transform.GetChild(3).gameObject.SetActive(true);
+            }
+            else if(smash_power / max_power <= 1f){
+                chargebar.transform.GetChild(4).gameObject.SetActive(true);
             }
         }
 

@@ -30,6 +30,7 @@ public class arrow_controller : MonoBehaviour
         if(ball_Controller.isfire){ // <= ball_contorller.cs
             ball_Controller.isfire = false; 
             ball_Controller.rb.AddForce(new Vector3(transform.position.x - ball_Controller.transform.position.x, transform.position.y - ball_Controller.transform.position.y, 0).normalized * ball_Controller.smash_power * 5, ForceMode2D.Impulse);
+            ball_Controller.smash_power = 0;
         }
     }
 }

@@ -30,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 9180467758965252221}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -14.49, y: -6.31, z: -0.2044208}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -101,8 +101,8 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 0.7
-  m_AngularDrag: 0.05
+  m_LinearDrag: 0.6
+  m_AngularDrag: 1
   m_GravityScale: 1
   m_Material: {fileID: 6200000, guid: 706db5a01ad692740886e20b8c5f7bc7, type: 2}
   m_IncludeLayers:
@@ -164,11 +164,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 8279969560942973768}
   arrow: {fileID: 3212857094620724698, guid: ff972defabbdad74e8bbee407a962b7f, type: 3}
+  chargeBar: {fileID: 7961635242294732009, guid: 33a56fc4e6a84324ca52c6c2e9cfd690, type: 3}
   spawnpoint: {x: 0, y: 0, z: 0}
   DragMA: 0
-  DragOG: 0.6
+  DragOG: 0.8
   rotation_speed: 120
-  max_power: 2.5
+  max_power: 3.5
   isfire: 0
   smash_power: 0
   shot_mode: 0
