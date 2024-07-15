@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using JetBrains.Annotations;
 using UnityEngine;
 
 public class ball_controller : MonoBehaviour
@@ -25,6 +26,13 @@ public class ball_controller : MonoBehaviour
     {
         spawnpoint = GameObject.FindWithTag("Spawn").transform.position;
         transform.position = spawnpoint;
+
+        GameObject[] checkpoints = GameObject.FindGameObjectsWithTag("CheckpointObj");
+        foreach(GameObject checkpoint in checkpoints){ // 가장 최근에 활성화한 체크포인트에 공을 소환.
+            if (checkpoint.GetComponent<checkpoint_controller>().recently_touched){
+                transform.position = checkpoint.transform.position + new Vector3(0, 1f, 0);
+            }
+        }
     }
 
     void OnCollisionEnter2D(Collision2D other){
@@ -73,8 +81,15 @@ public class ball_controller : MonoBehaviour
             else if(smash_power / max_power <= 0.8f){
                 chargebar.transform.GetChild(3).gameObject.SetActive(true);
             }
-            else if(smash_power / max_power <= 1f){
+            else if(smash_power / max_power < 1f){
                 chargebar.transform.GetChild(4).gameObject.SetActive(true);
+            }
+            else if (smash_power / max_power >= 1f){ // 최대 출력일 때 chargebar 색상 빨간색으로.
+                for(int i = 0; i < 5; i++){
+                    chargebar.transform.GetChild(i).GetComponent<SpriteRenderer>().color = Color.red;
+                }
+
+                // chargebar Shaking Effect + Fire effect
             }
         }
 

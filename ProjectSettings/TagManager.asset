@@ -8,6 +8,8 @@ TagManager:
   - Spawn
   - Ground
   - Chargebar
+  - Checkpoint
+  - CheckpointObj
   layers:
   - Default
   - TransparentFX
