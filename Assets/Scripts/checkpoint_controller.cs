@@ -6,10 +6,10 @@ using UnityEngine.Animations;
 
 public class checkpoint_controller : MonoBehaviour
 {
-    private Camera mainCam;
-    public int currentCamPos;
-    private Vector3 vel = Vector3.zero;
-    private float velFloat = 0f;
+    // private Camera mainCam;
+    // public int currentCamPos;
+    // private Vector3 vel = Vector3.zero;
+    // private float velFloat = 0f;
     private Vector3 checkpoint;
     private SpriteRenderer spriteRenderer;
     private GameObject ball;
@@ -18,7 +18,7 @@ public class checkpoint_controller : MonoBehaviour
     public bool recently_touched = false;
     void Start()
     {
-        mainCam = GameObject.Find("Main Camera").GetComponent<Camera>();
+        // mainCam = GameObject.Find("Main Camera").GetComponent<Camera>();
 
         transform.position = transform.parent.position; // 부모의 위치에 자신의 위치를 맞춤. (부모는 game_manager.cs에서의 체크포인트 지점들.)
         spriteRenderer = GetComponent<SpriteRenderer>();
@@ -45,25 +45,25 @@ public class checkpoint_controller : MonoBehaviour
             spriteRenderer.color = Color.yellow;
 
             // 캠 사이즈
-            if (transform.parent.name == "checkpoint1"){
-                currentCamPos = 1;
-            }
-            else if (transform.parent.name == "checkpoint2"){
-                currentCamPos = 2;
-            } 
+            // if (transform.parent.name == "checkpoint1"){
+            //     currentCamPos = 1;
+            // }
+            // else if (transform.parent.name == "checkpoint2"){
+            //     currentCamPos = 2;
+            // } 
         }
     }
 
     void Update()
     {
         // 캠 움직임
-        if (currentCamPos == 1 && recently_touched){ // 1 = levelBorder 1
-            mainCam.transform.position = Vector3.SmoothDamp(mainCam.transform.position, GameObject.Find("1cam").transform.position + new Vector3(0, 0, -1f), ref vel, 0.5f);
-            mainCam.orthographicSize = Mathf.SmoothDamp(mainCam.orthographicSize, 13, ref velFloat, 0.5f);
-        }
-        else if (currentCamPos == 2 && recently_touched){ // 2 = levelBorder 2
-            mainCam.transform.position = Vector3.SmoothDamp(mainCam.transform.position, GameObject.Find("2cam").transform.position + new Vector3(0, 0, -1f), ref vel, 0.5f);
-            mainCam.orthographicSize = Mathf.SmoothDamp(mainCam.orthographicSize, 13, ref velFloat, 0.5f);
-        }
+        // if (currentCamPos == 1 && recently_touched){ // 1 = levelBorder 1
+        //     mainCam.transform.position = Vector3.SmoothDamp(mainCam.transform.position, GameObject.Find("1cam").transform.position + new Vector3(0, 0, -1f), ref vel, 0.5f);
+        //     mainCam.orthographicSize = Mathf.SmoothDamp(mainCam.orthographicSize, 13, ref velFloat, 0.5f);
+        // }
+        // else if (currentCamPos == 2 && recently_touched){ // 2 = levelBorder 2
+        //     mainCam.transform.position = Vector3.SmoothDamp(mainCam.transform.position, GameObject.Find("2cam").transform.position + new Vector3(0, 0, -1f), ref vel, 0.5f);
+        //     mainCam.orthographicSize = Mathf.SmoothDamp(mainCam.orthographicSize, 13, ref velFloat, 0.5f);
+        // }
     }
 }
