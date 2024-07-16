@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 9e40a352a5767324196b9fe898766639
+guid: 6426b6e49b867ee49adb2a85511c6b15
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -121,7 +121,133 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: leaves_0
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 45
+        width: 18
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 76b91a4e41c675548811355572d03742
+      internalID: 1205057864
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: leaves_1
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 45
+        width: 18
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd43ba7a7150c0648a1f560f25e7da9c
+      internalID: -1568566766
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: leaves_2
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 28
+        width: 10
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 67cebe49adf6c9241a5f28cd8b650274
+      internalID: 1637163209
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: leaves_3
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 30
+        width: 9
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 021dc68b6eb29e14f87ce43117d1cae8
+      internalID: -920035588
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: leaves_4
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 24
+        width: 6
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c6a235af1440f245b57473ce1784495
+      internalID: 107446540
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: leaves_5
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 24
+        width: 7
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d581f0f171287964583fc6b94f5da9bc
+      internalID: 136064195
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -132,7 +258,13 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      leaves_0: 1205057864
+      leaves_1: -1568566766
+      leaves_2: 1637163209
+      leaves_3: -920035588
+      leaves_4: 107446540
+      leaves_5: 136064195
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -22,5 +22,12 @@ public class game_manager : MonoBehaviour
             Destroy(GameObject.FindWithTag("Ball"));
             Instantiate(ball_prefab);
         }
+
+        if(Input.GetKeyDown(KeyCode.Alpha1)){
+            GameObject.FindWithTag("Ball").transform.position = GameObject.Find("Debug1").transform.position;
+        }
+        else if(Input.GetKeyDown(KeyCode.Alpha2)){
+            GameObject.FindWithTag("Ball").transform.position = GameObject.Find("Debug2").transform.position;
+        }
     }
 }

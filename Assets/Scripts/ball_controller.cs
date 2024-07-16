@@ -10,6 +10,7 @@ public class ball_controller : MonoBehaviour
     [SerializeField] GameObject arrow;
     [SerializeField] GameObject chargeBar;
     [SerializeField] Vector3 spawnpoint;
+    [SerializeField] ParticleSystem shotParticle;
     [SerializeField] float DragMA; //Mid Air Linear drag
     [SerializeField] float DragOG; //On Ground Linear drag
 
@@ -99,6 +100,7 @@ public class ball_controller : MonoBehaviour
             rb.drag = DragMA;
             isfire = true;
             isStop = false;
+            Instantiate(shotParticle);
         }
         
         if(Input.GetKeyDown(KeyCode.X)){ // => arrow_controller.cs

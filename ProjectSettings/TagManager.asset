@@ -10,6 +10,8 @@ TagManager:
   - Chargebar
   - Checkpoint
   - CheckpointObj
+  - CamPosition
+  - DebugLoc
   layers:
   - Default
   - TransparentFX
