@@ -1,8 +1,13 @@
 fileFormatVersion: 2
-guid: 831b023c28eece04da8f660ab869ed5e
+guid: 0209f04f168f026458501b17b786558d
 ScriptedImporter:
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:AnimationClip
+      assembly: UnityEngine.AnimationModule
+      name: TV_idle_Clip
+    second: {fileID: 7400000, guid: 0180fb930626207469fe25087be3a2c6, type: 2}
   serializedVersion: 2
   userData: 
   assetBundleName: 
@@ -35,7 +40,7 @@ ScriptedImporter:
     spriteMeshType: 1
     alignment: 0
     spritePivot: {x: 0.5, y: 0.5}
-    spritePixelsToUnits: 100
+    spritePixelsToUnits: 32
     spriteBorder: {x: 0, y: 0, z: 0, w: 0}
     spriteGenerateFallbackPhysicsShape: 0
     generateCubemap: 6
@@ -95,7 +100,7 @@ ScriptedImporter:
     addSortingGroup: 1
     addShadowCasters: 0
   importFileNodeState: 1
-  platformSettingsDirtyTick: 0
+  platformSettingsDirtyTick: 638567794891305581
   textureAssetName: 
   singleSpriteImportData:
   - name: 
@@ -119,98 +124,118 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
   animatedSpriteImportData:
-  - name: idle outline_Frame_0
+  - name: TV_idle_Frame_0
     originalName: 
-    pivot: {x: 0.5, y: 0}
+    pivot: {x: 0.54545456, y: -0.21739131}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 35
+      y: 4
+      width: 22
+      height: 23
+    spriteID: ccf2713557e1c4a44bb422041b3df819
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 35, y: 4}
+  - name: TV_idle_Frame_1
+    originalName: 
+    pivot: {x: 0.54545456, y: -0.21739131}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 35
+      y: 35
+      width: 22
+      height: 23
+    spriteID: 19f73bff4c7ca88449b317c0e3008bbd
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 35, y: 35}
+  - name: TV_idle_Frame_2
+    originalName: 
+    pivot: {x: 0.54545456, y: -0.21739131}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 35
+      y: 66
+      width: 22
+      height: 23
+    spriteID: ca5d39b2d2c58e242be2c12a9823e289
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 35, y: 66}
+  - name: TV_idle_Frame_3
+    originalName: 
+    pivot: {x: 0.54545456, y: -0.21739131}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 35
+      y: 97
+      width: 22
+      height: 23
+    spriteID: 17f3e27ac87fcdb47aea6d3de9222517
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 35, y: 97}
+  - name: TV_idle_Frame_4
+    originalName: 
+    pivot: {x: 0.54545456, y: -0.21739131}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 65
+      y: 4
+      width: 22
+      height: 23
+    spriteID: ea7eb00627774894eb3632eae171d303
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 65, y: 4}
+  - name: TV_idle_Frame_5
+    originalName: 
+    pivot: {x: 0.5652174, y: -0.21739131}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 4
-      y: 90
-      width: 21
-      height: 34
-    spriteID: e2cb1b1186035d94e884f54018439124
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 4, y: 90}
-  - name: idle outline_Frame_1
-    originalName: 
-    pivot: {x: 0.5, y: 0}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 33
-      y: 90
-      width: 21
-      height: 34
-    spriteID: e97d44bb0c9a81b49b76d36370a74c42
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 33, y: 90}
-  - name: idle outline_Frame_2
-    originalName: 
-    pivot: {x: 0.5, y: 0}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 62
       y: 4
-      width: 21
-      height: 34
-    spriteID: 2a847972f9a00684d973929fdc4ec22c
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 62, y: 4}
-  - name: idle outline_Frame_3
-    originalName: 
-    pivot: {x: 0.5, y: 0}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 62
-      y: 46
-      width: 21
-      height: 34
-    spriteID: 05f5fa5092501384cb0e8b6a5b532e96
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 62, y: 46}
-  - name: idle outline_Frame_4
-    originalName: 
-    pivot: {x: 0.5, y: 0}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 4
-      y: 4
-      width: 21
-      height: 35
-    spriteID: 383a134f81d106e45aa970b8ad229378
+      width: 23
+      height: 23
+    spriteID: 1e6820ecf05024b49b3a327902ad7d90
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -219,18 +244,18 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 4, y: 4}
-  - name: idle outline_Frame_5
+  - name: TV_idle_Frame_6
     originalName: 
-    pivot: {x: 0.5, y: 0}
+    pivot: {x: 0.5652174, y: -0.21739131}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 4
-      y: 47
-      width: 21
-      height: 35
-    spriteID: a7b8ae38c19f61642bc0927fd131875b
+      y: 35
+      width: 23
+      height: 23
+    spriteID: 010359fdbcaedb648bf66a9b01e56742
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -238,19 +263,19 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 47}
-  - name: idle outline_Frame_6
+    uvTransform: {x: 4, y: 35}
+  - name: TV_idle_Frame_7
     originalName: 
-    pivot: {x: 0.5, y: 0}
+    pivot: {x: 0.5909091, y: -0.21739131}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 33
-      y: 4
-      width: 21
-      height: 35
-    spriteID: 5b0b6ee916efdd44bbeeaa63ad8330a3
+      x: 65
+      y: 35
+      width: 22
+      height: 23
+    spriteID: b1ee1280ac459a344b1a9b2fb5e97ff1
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -258,19 +283,19 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 33, y: 4}
-  - name: idle outline_Frame_7
+    uvTransform: {x: 65, y: 35}
+  - name: TV_idle_Frame_8
     originalName: 
-    pivot: {x: 0.5, y: 0}
+    pivot: {x: 0.5652174, y: -0.21739131}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 33
-      y: 47
-      width: 21
-      height: 35
-    spriteID: 602b3767dd0d2a842bd0480341c3a701
+      x: 4
+      y: 66
+      width: 23
+      height: 23
+    spriteID: df6b100289542a94c976c4f2427b14d4
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -278,19 +303,19 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 33, y: 47}
-  - name: idle outline_Frame_8
+    uvTransform: {x: 4, y: 66}
+  - name: TV_idle_Frame_9
     originalName: 
-    pivot: {x: 0.5, y: 0}
+    pivot: {x: 0.54545456, y: -0.20833334}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 62
-      y: 88
-      width: 21
-      height: 34
-    spriteID: ff9e5c536062156429cfe8ed74d93193
+      x: 4
+      y: 97
+      width: 22
+      height: 24
+    spriteID: e9f72184cbd7c35488b1d0f77a5a67a6
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -298,175 +323,135 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 62, y: 88}
-  - name: idle outline_Frame_9
-    originalName: 
-    pivot: {x: 0.5, y: 0}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 91
-      y: 4
-      width: 21
-      height: 33
-    spriteID: 8e46e803584c4384ba9324c41bb6fa02
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 91, y: 4}
-  - name: idle outline_Frame_10
-    originalName: 
-    pivot: {x: 0.5, y: 0}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 91
-      y: 45
-      width: 21
-      height: 33
-    spriteID: 9f9992f03747f0c46b1bf15708a8b327
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 91, y: 45}
-  - name: idle outline_Frame_11
-    originalName: 
-    pivot: {x: 0.5, y: 0}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 91
-      y: 86
-      width: 21
-      height: 33
-    spriteID: 68ab1aa9accfad94f9802b148fd1738d
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 91, y: 86}
+    uvTransform: {x: 4, y: 97}
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
-    guid: -262614082
-    name: idle outline
+    guid: 1495837401
+    name: TV_idle
     layerFlags: 0
     layerType: 0
     blendMode: 0
     cells:
-    - name: idle outline_Frame_0
+    - name: TV_idle_Frame_0
       frameIndex: 0
       cellRect:
-        x: 0
-        y: 0
-        width: 21
-        height: 34
-      spriteId: e2cb1b1186035d94e884f54018439124
-    - name: idle outline_Frame_1
+        x: 4
+        y: 5
+        width: 22
+        height: 23
+      spriteId: ccf2713557e1c4a44bb422041b3df819
+    - name: TV_idle_Frame_1
       frameIndex: 1
       cellRect:
-        x: 0
-        y: 0
-        width: 21
-        height: 34
-      spriteId: e97d44bb0c9a81b49b76d36370a74c42
-    - name: idle outline_Frame_2
+        x: 4
+        y: 5
+        width: 22
+        height: 23
+      spriteId: 19f73bff4c7ca88449b317c0e3008bbd
+    - name: TV_idle_Frame_2
       frameIndex: 2
       cellRect:
-        x: 0
-        y: 0
-        width: 21
-        height: 34
-      spriteId: 2a847972f9a00684d973929fdc4ec22c
-    - name: idle outline_Frame_3
+        x: 4
+        y: 5
+        width: 22
+        height: 23
+      spriteId: ca5d39b2d2c58e242be2c12a9823e289
+    - name: TV_idle_Frame_3
       frameIndex: 3
       cellRect:
-        x: 0
-        y: 0
-        width: 21
-        height: 34
-      spriteId: 05f5fa5092501384cb0e8b6a5b532e96
-    - name: idle outline_Frame_4
+        x: 4
+        y: 5
+        width: 22
+        height: 23
+      spriteId: 17f3e27ac87fcdb47aea6d3de9222517
+    - name: TV_idle_Frame_4
       frameIndex: 4
       cellRect:
-        x: 0
-        y: 0
-        width: 21
-        height: 35
-      spriteId: 383a134f81d106e45aa970b8ad229378
-    - name: idle outline_Frame_5
+        x: 4
+        y: 5
+        width: 22
+        height: 23
+      spriteId: ea7eb00627774894eb3632eae171d303
+    - name: TV_idle_Frame_5
       frameIndex: 5
       cellRect:
-        x: 0
-        y: 0
-        width: 21
-        height: 35
-      spriteId: a7b8ae38c19f61642bc0927fd131875b
-    - name: idle outline_Frame_6
+        x: 3
+        y: 5
+        width: 23
+        height: 23
+      spriteId: 1e6820ecf05024b49b3a327902ad7d90
+    - name: TV_idle_Frame_6
       frameIndex: 6
       cellRect:
-        x: 0
-        y: 0
-        width: 21
-        height: 35
-      spriteId: 5b0b6ee916efdd44bbeeaa63ad8330a3
-    - name: idle outline_Frame_7
+        x: 3
+        y: 5
+        width: 23
+        height: 23
+      spriteId: 010359fdbcaedb648bf66a9b01e56742
+    - name: TV_idle_Frame_7
       frameIndex: 7
       cellRect:
-        x: 0
-        y: 0
-        width: 21
-        height: 35
-      spriteId: 602b3767dd0d2a842bd0480341c3a701
-    - name: idle outline_Frame_8
+        x: 3
+        y: 5
+        width: 22
+        height: 23
+      spriteId: b1ee1280ac459a344b1a9b2fb5e97ff1
+    - name: TV_idle_Frame_8
       frameIndex: 8
       cellRect:
-        x: 0
-        y: 0
-        width: 21
-        height: 34
-      spriteId: ff9e5c536062156429cfe8ed74d93193
-    - name: idle outline_Frame_9
+        x: 3
+        y: 5
+        width: 23
+        height: 23
+      spriteId: df6b100289542a94c976c4f2427b14d4
+    - name: TV_idle_Frame_9
       frameIndex: 9
       cellRect:
-        x: 0
-        y: 0
-        width: 21
-        height: 33
-      spriteId: 8e46e803584c4384ba9324c41bb6fa02
-    - name: idle outline_Frame_10
-      frameIndex: 10
-      cellRect:
-        x: 0
-        y: 0
-        width: 21
-        height: 33
-      spriteId: 9f9992f03747f0c46b1bf15708a8b327
-    - name: idle outline_Frame_11
-      frameIndex: 11
-      cellRect:
-        x: 0
-        y: 0
-        width: 21
-        height: 33
-      spriteId: 68ab1aa9accfad94f9802b148fd1738d
+        x: 4
+        y: 5
+        width: 22
+        height: 24
+      spriteId: e9f72184cbd7c35488b1d0f77a5a67a6
     linkedCells: []
     parentIndex: -1
-  platformSettings: []
+  platformSettings:
+  - name: DefaultTexturePlatform
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: Standalone
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: Server
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
   secondarySpriteTextures: []
   spritePackingTag: 
-  canvasSize: {x: 21, y: 35}
+  canvasSize: {x: 32, y: 32}
