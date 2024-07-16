@@ -7,6 +7,7 @@ public class TextPrint : MonoBehaviour
 {
     public string iText;
     public Text cText;
+    private bool fineprint = false;
 
   
     IEnumerator delay(string text)
@@ -17,6 +18,8 @@ public class TextPrint : MonoBehaviour
             yield return new WaitForSeconds(0.1f);
         }
         
+        fineprint = true;
+
     }
           
     void Awake()
@@ -24,6 +27,13 @@ public class TextPrint : MonoBehaviour
         StartCoroutine(delay(iText));
     }
 
+    void Update(){
+        if(fineprint){
+            if(Input.GetKey(KeyCode.E)){
+                this.gameObject.SetActive(false);
+            }
+        }
+    }
     
 
     
