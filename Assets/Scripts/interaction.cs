@@ -9,7 +9,7 @@ public class interaction : MonoBehaviour
     void OnTriggerEnter2D(Collider2D collision){
 
 
-        if(collision.gameObject.CompareTag("Ball")){
+        if(collision.gameObject.CompareTag("Player")){
             if(Input.GetKey(KeyCode.E) && check == false){
                 check = true;
                 obj.SetActive(true);
@@ -18,7 +18,7 @@ public class interaction : MonoBehaviour
     }
 
     void OnTriggerStay2D(Collider2D collision){
-        if(collision.gameObject.CompareTag("Ball")){
+        if(collision.gameObject.CompareTag("Player")){
             if(Input.GetKey(KeyCode.E) && check == false){
                 check = true;
                 obj.SetActive(true);

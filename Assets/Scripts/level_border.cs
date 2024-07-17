@@ -36,7 +36,7 @@ public class level_border : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.tag == "Ball"){
+        if (other.tag == "Player"){
             if (gameObject.name == "t_1"){
                 gm.currentCamPos = 1;
             }
