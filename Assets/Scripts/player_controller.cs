@@ -6,8 +6,11 @@ using UnityEngine;
 public class player_controller : MonoBehaviour
 {
     private Vector3 spawnpoint;
+    private Animator anim;
+    private SpriteRenderer sr;
+    public float moveInput;
     public float jumppadHoriVel;
-    private int moveDir;
+    
     [SerializeField] Rigidbody2D rb;
     [SerializeField] float moveSpeed;
     [SerializeField] float jumpPower;
@@ -31,6 +34,8 @@ public class player_controller : MonoBehaviour
     void Start()
     {
         spawnpoint = GameObject.FindWithTag("Spawn").transform.position;
+        anim = GetComponent<Animator>();
+        sr = GetComponent<SpriteRenderer>();
         transform.position = spawnpoint;
 
         GameObject[] checkpoints = GameObject.FindGameObjectsWithTag("CheckpointObj");
@@ -43,17 +48,24 @@ public class player_controller : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (Input.GetKey(KeyCode.LeftArrow)){
-            moveDir = -1;
+        moveInput = Input.GetAxisRaw("Horizontal");
+        Debug.Log(moveInput);
+
+        rb.velocity = new Vector2(moveInput * moveSpeed + jumppadHoriVel, rb.velocity.y);
+
+        if(is_grounded && Mathf.Abs(moveInput) > 0){ //Walk Animation
+            anim.SetBool("isWalk", true);
         }
-        else if (Input.GetKey(KeyCode.RightArrow)){
-            moveDir = 1;
-        }
-        else if (!Input.GetKey(KeyCode.LeftArrow) && !Input.GetKey(KeyCode.RightArrow)){
-            moveDir = 0;
+        else{
+            anim.SetBool("isWalk", false);
         }
 
-        rb.velocity = new Vector2(moveDir * moveSpeed + jumppadHoriVel, rb.velocity.y);
+        if(moveInput > 0){ //Flip
+            sr.flipX = false;
+        }
+        else if(moveInput < 0){
+            sr.flipX = true;
+        }
 
         if (Input.GetKey(KeyCode.Space) && is_grounded){
             is_grounded = false;
@@ -74,7 +86,7 @@ public class player_controller : MonoBehaviour
         }
 
 
-        if (Input.GetKeyDown(KeyCode.LeftShift)){
+        if (Input.GetKeyDown(KeyCode.C)){
             StartCoroutine(RopeJump());
         }
     }
