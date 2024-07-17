@@ -32,5 +32,6 @@ public class game_manager : MonoBehaviour
         else if(Input.GetKeyDown(KeyCode.Alpha2)){
             GameObject.FindWithTag("Player").transform.position = GameObject.Find("Debug2").transform.position;
         }
+        
     }
 }

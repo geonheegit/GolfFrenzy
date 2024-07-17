@@ -68,9 +68,16 @@ public class player_controller : MonoBehaviour
         }
 
         if (Input.GetKey(KeyCode.Space) && is_grounded){
+            anim.SetBool("isJump", true);
+            anim.SetBool("isLand", false);
             is_grounded = false;
             rb.velocity = new Vector2(rb.velocity.x, 0f);
             rb.velocity = new Vector2(rb.velocity.x, jumpPower);
+        }
+
+        if(!is_grounded && rb.velocity.y < 0){
+            anim.SetBool("isJump", false);
+            anim.SetBool("isFalling", true);
         }
     }
 
@@ -81,6 +88,9 @@ public class player_controller : MonoBehaviour
         RaycastHit2D hit = Physics2D.Raycast(rb.position + new Vector2(0.25f, 0.7f), Vector3.down, 0.7f, LayerMask.GetMask("Ground"));
         if (hit.collider != null)
         {
+            anim.SetBool("isJump", false);
+            anim.SetBool("isFalling", false);
+            anim.SetBool("isLand", true);
             is_grounded = true;
             ropeUsed = false;
         }

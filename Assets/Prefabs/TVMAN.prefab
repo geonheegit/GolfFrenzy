@@ -121,6 +121,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc767221dca9fb7488ea0e82001bf3d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  moveInput: 0
+  jumppadHoriVel: 0
   rb: {fileID: 2847400040689184824}
   moveSpeed: 8
   jumpPower: 15
@@ -142,7 +144,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 4
+  m_GravityScale: 3
   m_Material: {fileID: 6200000, guid: 7f8fbd85edc67d543b098c4af77a09b8, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
