@@ -18,7 +18,6 @@ public class player_controller : MonoBehaviour
     [SerializeField] bool is_grounded = false;
     [SerializeField] bool ropeUsed = false;
 
-
     IEnumerator RopeJump(){
         if(!ropeUsed){
             ropeUsed = true;

@@ -11,10 +11,12 @@ public class jumppad : MonoBehaviour
     [SerializeField] Sprite[] sprites;
     [SerializeField] SpriteRenderer spriteRenderer;
     private player_controller player_Controller;
+    private Rigidbody2D playerRb;
 
     void Start()
     {
         player_Controller = GameObject.FindWithTag("Player").GetComponent<player_controller>();
+        playerRb = GameObject.FindWithTag("Player").GetComponent<Rigidbody2D>();
     }
 
     IEnumerator Animate(){
@@ -24,16 +26,6 @@ public class jumppad : MonoBehaviour
         }
         spriteRenderer.sprite = sprites[0];
     }
-
-    // IEnumerator SpringHoriVelCalc(float power, float decayTime){
-    //     int smooth = 4;
-    //     for(int i = 0; i < decayTime * smooth; i++){
-    //         player_Controller.jumppadHoriVel = -(power - (power * (i / decayTime * smooth))) / 2;
-    //         yield return new WaitForSeconds(1 / (decayTime * smooth));
-    //         Debug.Log((power - (power * (i / decayTime * smooth))) / 2);
-    //         Debug.Log("qq: " + player_Controller.jumppadHoriVel);
-    //     }
-    // }
 
     void OnTriggerEnter2D(Collider2D other)
     {
@@ -48,12 +40,10 @@ public class jumppad : MonoBehaviour
                 playerRb.velocity = new Vector3(playerRb.velocity.x, -springPower, 0f);
             }
             else if (direction == "E"){
-                // StopCoroutine(SpringHoriVelCalc(springPower, 1f));
-                // StartCoroutine(SpringHoriVelCalc(springPower, 1f));
+                playerRb.AddForce(new Vector2(springPower, 0), ForceMode2D.Impulse);
             }
             else if (direction == "W"){
-                // StopCoroutine(SpringHoriVelCalc(-springPower, 1f));
-                // StartCoroutine(SpringHoriVelCalc(-springPower, 1f));
+                playerRb.AddForce(new Vector2(-springPower, 0), ForceMode2D.Impulse);
             }
             
 
