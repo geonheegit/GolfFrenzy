@@ -124,7 +124,8 @@ MonoBehaviour:
   moveInput: 0
   jumppadHoriVel: 0
   rb: {fileID: 2847400040689184824}
-  moveSpeed: 8
+  moveSpeed: 4
+  maxrunspd: 1.8
   jumpPower: 15
   ropeJumpPower: 4.5
   is_grounded: 0

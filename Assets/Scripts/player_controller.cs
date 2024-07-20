@@ -8,11 +8,14 @@ public class player_controller : MonoBehaviour
     private Vector3 spawnpoint;
     private Animator anim;
     private SpriteRenderer sr;
+    private float runspd;
     public float moveInput;
     public float jumppadHoriVel;
     
     [SerializeField] Rigidbody2D rb;
     [SerializeField] float moveSpeed;
+    [SerializeField] float maxrunspd;
+
     [SerializeField] float jumpPower;
     [SerializeField] float ropeJumpPower;
     [SerializeField] bool is_grounded = false;
@@ -27,12 +30,15 @@ public class player_controller : MonoBehaviour
             for(int i = 0; i < 5; i++){
                 rb.AddForce(new Vector2(0, ropeJumpPower), ForceMode2D.Impulse);
                 yield return new WaitForSeconds(0.04f);
+                
             }
+            anim.SetBool("isSpin", false);
         }
     }
 
     void Start()
     {
+        runspd = 1;
         spawnpoint = GameObject.FindWithTag("Spawn").transform.position;
         anim = GetComponent<Animator>();
         sr = GetComponent<SpriteRenderer>();
@@ -51,7 +57,7 @@ public class player_controller : MonoBehaviour
         moveInput = Input.GetAxisRaw("Horizontal");
         Debug.Log(moveInput);
 
-        rb.velocity = new Vector2(moveInput * moveSpeed + jumppadHoriVel, rb.velocity.y);
+        rb.velocity = new Vector2(moveInput * moveSpeed * runspd + jumppadHoriVel, rb.velocity.y);
 
         if(is_grounded && Mathf.Abs(moveInput) > 0){ //Walk Animation
             anim.SetBool("isWalk", true);
@@ -79,6 +85,10 @@ public class player_controller : MonoBehaviour
             anim.SetBool("isJump", false);
             anim.SetBool("isFalling", true);
         }
+        else
+        {
+            anim.SetBool("isFalling", false);
+        }
     }
 
     void Update()
@@ -89,15 +99,29 @@ public class player_controller : MonoBehaviour
         if (hit.collider != null)
         {
             anim.SetBool("isJump", false);
-            anim.SetBool("isFalling", false);
             anim.SetBool("isLand", true);
             is_grounded = true;
             ropeUsed = false;
+            
         }
 
 
-        if (Input.GetKeyDown(KeyCode.C)){
+        if (!is_grounded && Input.GetKeyDown(KeyCode.C)){
+            anim.SetBool("isSpin", true);
             StartCoroutine(RopeJump());
         }
+
+        if(is_grounded){
+
+            if(Input.GetKey(KeyCode.LeftShift)){
+                runspd = maxrunspd;
+            }
+            else{
+                runspd = 1;
+            }
+            
+        }
+
+
     }
 }
