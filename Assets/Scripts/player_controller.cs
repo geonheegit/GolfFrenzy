@@ -15,7 +15,7 @@ public class player_controller : MonoBehaviour
     [SerializeField] float moveSpeed;
     [SerializeField] float jumpPower;
     [SerializeField] float ropeJumpPower;
-    [SerializeField] bool is_grounded = false;
+    public bool is_grounded = false;
     [SerializeField] bool ropeUsed = false;
 
     IEnumerator RopeJump(){
@@ -78,6 +78,7 @@ public class player_controller : MonoBehaviour
             anim.SetBool("isJump", false);
             anim.SetBool("isFalling", true);
         }
+
     }
 
     void Update()

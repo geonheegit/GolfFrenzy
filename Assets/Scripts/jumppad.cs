@@ -27,11 +27,35 @@ public class jumppad : MonoBehaviour
         spriteRenderer.sprite = sprites[0];
     }
 
+    IEnumerator SpringPowerControl(int direction){ // direction: 1 = E, 2 = W
+        float equalDivide = 3.5f;
+        float initialSpringpower = springPower / equalDivide;
+
+        playerRb.AddForce(new Vector2(0, 10), ForceMode2D.Impulse);
+
+        if (direction == 1){ // E
+            player_Controller.jumppadHoriVel = springPower / equalDivide;
+            for(int i = 0; i < 5; i++){
+                player_Controller.jumppadHoriVel -= initialSpringpower / 5;
+                yield return new WaitForSeconds(0.08f);
+            }
+        }
+        else if (direction == 2){ // W
+            player_Controller.jumppadHoriVel = -springPower / equalDivide;
+            for(int i = 0; i < 5; i++){
+                player_Controller.jumppadHoriVel += initialSpringpower / 5;
+                yield return new WaitForSeconds(0.08f);
+            }
+        }
+    }
+
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.tag == "Player"){
             Rigidbody2D playerRb = other.GetComponent<Rigidbody2D>();
+            playerRb.velocity = new Vector2(playerRb.velocity.x, 0);
             
+            player_Controller.is_grounded = true; // 스프링으로 점프했을 때도 땅 밟은 판정으로.
 
             if (direction == "N"){
                 playerRb.velocity = new Vector3(playerRb.velocity.x, springPower, 0f);
@@ -40,10 +64,12 @@ public class jumppad : MonoBehaviour
                 playerRb.velocity = new Vector3(playerRb.velocity.x, -springPower, 0f);
             }
             else if (direction == "E"){
-                playerRb.AddForce(new Vector2(springPower, 0), ForceMode2D.Impulse);
+                StopCoroutine(SpringPowerControl(1));
+                StartCoroutine(SpringPowerControl(1));
             }
             else if (direction == "W"){
-                playerRb.AddForce(new Vector2(-springPower, 0), ForceMode2D.Impulse);
+                StopCoroutine(SpringPowerControl(2));
+                StartCoroutine(SpringPowerControl(2));
             }
             
 
