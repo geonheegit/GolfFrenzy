@@ -10,8 +10,8 @@ public class jumppad : MonoBehaviour
     [SerializeField] float animateTime;
     [SerializeField] Sprite[] sprites;
     [SerializeField] SpriteRenderer spriteRenderer;
-    private player_controller player_Controller;
-    private Rigidbody2D playerRb;
+    [SerializeField] player_controller player_Controller;
+    [SerializeField] Rigidbody2D playerRb;
 
     void Start()
     {
@@ -74,6 +74,14 @@ public class jumppad : MonoBehaviour
             
 
             StartCoroutine(Animate());
+        }
+    }
+
+    void Update()
+    {
+        if (player_Controller == null || playerRb == null){
+            player_Controller = GameObject.FindWithTag("Player").GetComponent<player_controller>();
+            playerRb = GameObject.FindWithTag("Player").GetComponent<Rigidbody2D>();
         }
     }
 }

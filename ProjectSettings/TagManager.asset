@@ -12,6 +12,7 @@ TagManager:
   - CheckpointObj
   - CamPosition
   - DebugLoc
+  - JumpPad
   layers:
   - Default
   - TransparentFX

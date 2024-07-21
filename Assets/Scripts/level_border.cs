@@ -20,7 +20,11 @@ public class level_border : MonoBehaviour
     void Update()
     {
         // 캠 움직임
-        if (gm.currentCamPos == 1){ // 1 = levelBorder 1
+        if (gm.currentCamPos == 0){ // 0 = tutorial
+            mainCam.transform.position = Vector3.SmoothDamp(mainCam.transform.position, GameObject.Find("tutorialcam").transform.position + new Vector3(0, 0, -1f), ref vel, 0.5f);
+            mainCam.orthographicSize = Mathf.SmoothDamp(mainCam.orthographicSize, 10, ref velFloat, 0.5f);
+        }
+        else if (gm.currentCamPos == 1){ // 1 = levelBorder 1
             mainCam.transform.position = Vector3.SmoothDamp(mainCam.transform.position, GameObject.Find("1cam").transform.position + new Vector3(0, 0, -1f), ref vel, 0.5f);
             mainCam.orthographicSize = Mathf.SmoothDamp(mainCam.orthographicSize, 13, ref velFloat, 0.5f);
         }
@@ -37,14 +41,29 @@ public class level_border : MonoBehaviour
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.tag == "Player"){
-            if (gameObject.name == "t_1"){
+            if (gameObject.name == "t_1" && other.transform.position.x < transform.position.x){ // 플레이어가 왼쪽에서 오른쪽으로 넘어갈 때
                 gm.currentCamPos = 1;
+
             }
-            else if (gameObject.name == "1_2"){
+            else if (gameObject.name == "t_1" && other.transform.position.x > transform.position.x){ // 플레이어가 오른쪽에서 왼쪽으로 넘어갈 때
+                gm.currentCamPos = 0;
+
+            }
+            else if (gameObject.name == "1_2" && other.transform.position.x < transform.position.x){
                 gm.currentCamPos = 2;
+
             }
-            else if (gameObject.name == "2_3"){
+            else if (gameObject.name == "1_2" && other.transform.position.x > transform.position.x){ // 플레이어가 오른쪽에서 왼쪽으로 넘어갈 때
+                gm.currentCamPos = 1;
+
+            }
+            else if (gameObject.name == "2_3" && other.transform.position.x < transform.position.x){
                 gm.currentCamPos = 3;
+
+            }
+            else if (gameObject.name == "2_3" && other.transform.position.x > transform.position.x){ // 플레이어가 오른쪽에서 왼쪽으로 넘어갈 때
+                gm.currentCamPos = 2;
+
             }
         }
     }

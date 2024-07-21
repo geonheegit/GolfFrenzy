@@ -213,7 +213,7 @@ Transform:
   m_GameObject: {fileID: 5506900}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 17.04, y: -7.95, z: 0}
+  m_LocalPosition: {x: 16.12, y: -7.98, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -572,7 +572,7 @@ GameObject:
   - component: {fileID: 94194450}
   m_Layer: 0
   m_Name: Spring
-  m_TagString: Untagged
+  m_TagString: JumpPad
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -598,6 +598,8 @@ MonoBehaviour:
   - {fileID: 1230711090841992251, guid: c8b9a6176d525144cbad95806bb45d82, type: 3}
   - {fileID: -5364558494826330238, guid: c8b9a6176d525144cbad95806bb45d82, type: 3}
   spriteRenderer: {fileID: 94194448}
+  player_Controller: {fileID: 0}
+  playerRb: {fileID: 0}
 --- !u!212 &94194448
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5889,7 +5891,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 1, g: 0, b: 0, a: 0.050980393}
+  m_Color: {r: 1, g: 0, b: 0, a: 0}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -15830,7 +15832,7 @@ Transform:
   m_GameObject: {fileID: 575409108}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 103.76, y: -5.88, z: 0}
+  m_LocalPosition: {x: 103.99, y: -5.88, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -20328,7 +20330,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 31
-      m_TileSpriteIndex: 31
+      m_TileSpriteIndex: 107
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -20338,7 +20340,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 30
-      m_TileSpriteIndex: 30
+      m_TileSpriteIndex: 31
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -35653,10 +35655,10 @@ Tilemap:
     m_Data: {fileID: 1966971546, guid: fe92b7b325e0a0b4489b47f7fc0de2f3, type: 3}
   - m_RefCount: 51
     m_Data: {fileID: 1848581346, guid: fe92b7b325e0a0b4489b47f7fc0de2f3, type: 3}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
   - m_RefCount: 1
     m_Data: {fileID: -1894353307, guid: fe92b7b325e0a0b4489b47f7fc0de2f3, type: 3}
-  - m_RefCount: 1
-    m_Data: {fileID: -1446884558, guid: fe92b7b325e0a0b4489b47f7fc0de2f3, type: 3}
   - m_RefCount: 1143
     m_Data: {fileID: -4280933, guid: fe92b7b325e0a0b4489b47f7fc0de2f3, type: 3}
   - m_RefCount: 1
@@ -35807,8 +35809,8 @@ Tilemap:
     m_Data: {fileID: -1722789110, guid: fe92b7b325e0a0b4489b47f7fc0de2f3, type: 3}
   - m_RefCount: 1
     m_Data: {fileID: 356696718, guid: fe92b7b325e0a0b4489b47f7fc0de2f3, type: 3}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
+  - m_RefCount: 1
+    m_Data: {fileID: -1446884558, guid: fe92b7b325e0a0b4489b47f7fc0de2f3, type: 3}
   - m_RefCount: 1
     m_Data: {fileID: 1539207400, guid: fe92b7b325e0a0b4489b47f7fc0de2f3, type: 3}
   - m_RefCount: 1
@@ -46526,7 +46528,7 @@ GameObject:
   - component: {fileID: 679875973}
   m_Layer: 0
   m_Name: Spring (3)
-  m_TagString: Untagged
+  m_TagString: JumpPad
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -46639,6 +46641,8 @@ MonoBehaviour:
   - {fileID: 1230711090841992251, guid: c8b9a6176d525144cbad95806bb45d82, type: 3}
   - {fileID: -5364558494826330238, guid: c8b9a6176d525144cbad95806bb45d82, type: 3}
   spriteRenderer: {fileID: 679875976}
+  player_Controller: {fileID: 0}
+  playerRb: {fileID: 0}
 --- !u!212 &679875976
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -50545,7 +50549,7 @@ Transform:
   m_GameObject: {fileID: 837932605}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 61.41, y: -5.88, z: 0}
+  m_LocalPosition: {x: 60.77, y: -5.88, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -56312,7 +56316,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 1, g: 0, b: 0, a: 0.050980393}
+  m_Color: {r: 1, g: 0, b: 0, a: 0}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -56773,7 +56777,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 1, g: 0, b: 0, a: 0.050980393}
+  m_Color: {r: 1, g: 0, b: 0, a: 0}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -62496,7 +62500,7 @@ GameObject:
   - component: {fileID: 1586321039}
   m_Layer: 0
   m_Name: Spring (2)
-  m_TagString: Untagged
+  m_TagString: JumpPad
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -62609,6 +62613,8 @@ MonoBehaviour:
   - {fileID: 1230711090841992251, guid: c8b9a6176d525144cbad95806bb45d82, type: 3}
   - {fileID: -5364558494826330238, guid: c8b9a6176d525144cbad95806bb45d82, type: 3}
   spriteRenderer: {fileID: 1586321042}
+  player_Controller: {fileID: 0}
+  playerRb: {fileID: 0}
 --- !u!212 &1586321042
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -63818,7 +63824,7 @@ GameObject:
   - component: {fileID: 2107877432}
   m_Layer: 0
   m_Name: Spring (1)
-  m_TagString: Untagged
+  m_TagString: JumpPad
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -63931,6 +63937,8 @@ MonoBehaviour:
   - {fileID: 1230711090841992251, guid: c8b9a6176d525144cbad95806bb45d82, type: 3}
   - {fileID: -5364558494826330238, guid: c8b9a6176d525144cbad95806bb45d82, type: 3}
   spriteRenderer: {fileID: 2107877435}
+  player_Controller: {fileID: 0}
+  playerRb: {fileID: 0}
 --- !u!212 &2107877435
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -64130,7 +64138,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.34117648}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

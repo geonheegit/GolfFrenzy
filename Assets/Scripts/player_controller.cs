@@ -8,18 +8,20 @@ public class player_controller : MonoBehaviour
     private Vector3 spawnpoint;
     private Animator anim;
     private SpriteRenderer sr;
-    private float runspd;
+    private BoxCollider2D boxCollider2D;
     public float moveInput;
     public float jumppadHoriVel;
     
     [SerializeField] Rigidbody2D rb;
     [SerializeField] float moveSpeed;
-    [SerializeField] float maxrunspd;
 
     [SerializeField] float jumpPower;
     [SerializeField] float ropeJumpPower;
     public bool is_grounded = false;
     [SerializeField] bool ropeUsed = false;
+
+    private Vector2 normalColliderOffset;
+    private float colliderXOffset = 0.15f;
 
     IEnumerator RopeJump(){
         if(!ropeUsed){
@@ -37,11 +39,14 @@ public class player_controller : MonoBehaviour
 
     void Start()
     {
-        runspd = 1;
         spawnpoint = GameObject.FindWithTag("Spawn").transform.position;
         anim = GetComponent<Animator>();
         sr = GetComponent<SpriteRenderer>();
+        boxCollider2D = GetComponent<BoxCollider2D>();
         transform.position = spawnpoint;
+
+        // store original vector2 value before character flips.
+        normalColliderOffset = new Vector2(boxCollider2D.offset.x, boxCollider2D.offset.y);
 
         GameObject[] checkpoints = GameObject.FindGameObjectsWithTag("CheckpointObj");
         foreach(GameObject checkpoint in checkpoints){ // 가장 최근에 활성화한 체크포인트에 플레이어를 소환.
@@ -54,9 +59,8 @@ public class player_controller : MonoBehaviour
     void FixedUpdate()
     {
         moveInput = Input.GetAxisRaw("Horizontal");
-        Debug.Log(moveInput);
 
-        rb.velocity = new Vector2(moveInput * moveSpeed * runspd + jumppadHoriVel, rb.velocity.y);
+        rb.velocity = new Vector2(moveInput * moveSpeed + jumppadHoriVel, rb.velocity.y);
 
         if(is_grounded && Mathf.Abs(moveInput) > 0){ //Walk Animation
             anim.SetBool("isWalk", true);
@@ -67,9 +71,12 @@ public class player_controller : MonoBehaviour
 
         if(moveInput > 0){ //Flip
             sr.flipX = false;
+            boxCollider2D.offset = normalColliderOffset;
         }
         else if(moveInput < 0){
             sr.flipX = true;
+            boxCollider2D.offset = new Vector2(normalColliderOffset.x - colliderXOffset, normalColliderOffset.y);
+            
         }
 
         if (Input.GetKey(KeyCode.Space) && is_grounded){
@@ -93,10 +100,25 @@ public class player_controller : MonoBehaviour
 
     void Update()
     {
-        Debug.DrawRay(rb.position + new Vector2(0.25f, 0.7f), Vector3.down * 0.7f, new Color(1, 0, 0));
-
-        RaycastHit2D hit = Physics2D.Raycast(rb.position + new Vector2(0.25f, 0.7f), Vector3.down, 0.7f, LayerMask.GetMask("Ground"));
-        if (hit.collider != null)
+        float rayOffset = 0.4f;
+        float leftRayPosX = -0.25f;
+        float rightRayPosX = 0.65f;
+        RaycastHit2D hitLeft;
+        RaycastHit2D hitRight;
+        if (!sr.flipX){
+            hitLeft = Physics2D.Raycast(rb.position + new Vector2(leftRayPosX, 0.7f), Vector3.down, 0.7f, LayerMask.GetMask("Ground"));
+            Debug.DrawRay(rb.position + new Vector2(leftRayPosX, 0.7f), Vector3.down * 0.7f, new Color(1, 0, 0));
+            hitRight = Physics2D.Raycast(rb.position + new Vector2(rightRayPosX, 0.7f), Vector3.down, 0.7f, LayerMask.GetMask("Ground"));
+            Debug.DrawRay(rb.position + new Vector2(rightRayPosX, 0.7f), Vector3.down * 0.7f, new Color(0, 1, 0));
+        }
+        else{
+            hitLeft = Physics2D.Raycast(rb.position + new Vector2(leftRayPosX - rayOffset, 0.7f), Vector3.down, 0.7f, LayerMask.GetMask("Ground"));
+            Debug.DrawRay(rb.position + new Vector2(leftRayPosX - rayOffset, 0.7f), Vector3.down * 0.7f, new Color(1, 0, 0));
+            hitRight = Physics2D.Raycast(rb.position + new Vector2(rightRayPosX - rayOffset, 0.7f), Vector3.down, 0.7f, LayerMask.GetMask("Ground"));
+            Debug.DrawRay(rb.position + new Vector2(rightRayPosX - rayOffset, 0.7f), Vector3.down * 0.7f, new Color(0, 1, 0));
+        }
+        
+        if (hitLeft.collider != null || hitRight.collider != null)
         {
             anim.SetBool("isJump", false);
             anim.SetBool("isLand", true);
@@ -106,22 +128,10 @@ public class player_controller : MonoBehaviour
         }
 
 
-        if (!is_grounded && Input.GetKeyDown(KeyCode.C)){
+        if (!is_grounded && Input.GetKeyDown(KeyCode.LeftShift)){
             anim.SetBool("isSpin", true);
             StartCoroutine(RopeJump());
         }
-
-        if(is_grounded){
-
-            if(Input.GetKey(KeyCode.LeftShift)){
-                runspd = maxrunspd;
-            }
-            else{
-                runspd = 1;
-            }
-            
-        }
-
 
     }
 }
