@@ -9,16 +9,19 @@ public class player_controller : MonoBehaviour
     private Animator anim;
     private SpriteRenderer sr;
     private BoxCollider2D boxCollider2D;
+    private LineRenderer lineRenderer;
     public float moveInput;
     public float jumppadHoriVel;
+    public float lineLength;
     
     [SerializeField] Rigidbody2D rb;
+    [SerializeField] GameObject ropeEndObj;
     [SerializeField] float moveSpeed;
 
     [SerializeField] float jumpPower;
     [SerializeField] float ropeJumpPower;
     public bool is_grounded = false;
-    [SerializeField] bool ropeUsed = false;
+    public bool ropeUsed = false;
 
     private Vector2 normalColliderOffset;
     private float colliderXOffset = 0.15f;
@@ -43,7 +46,14 @@ public class player_controller : MonoBehaviour
         anim = GetComponent<Animator>();
         sr = GetComponent<SpriteRenderer>();
         boxCollider2D = GetComponent<BoxCollider2D>();
+        lineRenderer = GetComponent<LineRenderer>();
+        lineRenderer.sortingOrder = 101;
         transform.position = spawnpoint;
+
+        // linerenderer settings
+        lineRenderer.positionCount = 2;
+        lineRenderer.startWidth = 0.2f;
+        lineRenderer.endWidth = 0.2f;
 
         // store original vector2 value before character flips.
         normalColliderOffset = new Vector2(boxCollider2D.offset.x, boxCollider2D.offset.y);
@@ -131,6 +141,22 @@ public class player_controller : MonoBehaviour
         if (!is_grounded && Input.GetKeyDown(KeyCode.LeftShift)){
             anim.SetBool("isSpin", true);
             StartCoroutine(RopeJump());
+
+            // 와이어 연결 코드
+            
+            GameObject ropeEndPoint = Instantiate(ropeEndObj);
+            ropeEndPoint.transform.position = transform.position + new Vector3(0, lineLength, -0.5f);
+            lineRenderer.SetPosition(0, new Vector3(ropeEndPoint.transform.position.x, ropeEndPoint.transform.position.y + 2f, -0.5f));
+        }
+
+        // 와이어 연결 코드
+        if (!is_grounded && ropeUsed && rb.velocity.y > 10f){
+            lineRenderer.enabled = true;
+            lineRenderer.SetPosition(1, new Vector3(transform.position.x, transform.position.y + 1.5f, -0.5f));
+        }
+        else{
+            lineRenderer.enabled = false;
+            Destroy(GameObject.FindWithTag("RopeEndPoint"));
         }
 
     }

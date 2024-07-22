@@ -13,6 +13,7 @@ TagManager:
   - CamPosition
   - DebugLoc
   - JumpPad
+  - RopeEndPoint
   layers:
   - Default
   - TransparentFX

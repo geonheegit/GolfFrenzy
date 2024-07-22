@@ -52,6 +52,7 @@ public class jumppad : MonoBehaviour
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.tag == "Player"){
+            player_Controller.ropeUsed = false;
             Rigidbody2D playerRb = other.GetComponent<Rigidbody2D>();
             playerRb.velocity = new Vector2(playerRb.velocity.x, 0);
             
