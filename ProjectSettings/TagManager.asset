@@ -14,6 +14,7 @@ TagManager:
   - DebugLoc
   - JumpPad
   - RopeEndPoint
+  - GameOver
   layers:
   - Default
   - TransparentFX

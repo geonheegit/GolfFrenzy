@@ -6,6 +6,8 @@ public class game_manager : MonoBehaviour
 {
     [SerializeField] GameObject player_prefab;
     [SerializeField] GameObject checkpoint_prefab;
+    [SerializeField] GameObject gameover;
+
     public int currentCamPos; // level_border.cs
 
     void Awake()
@@ -24,6 +26,7 @@ public class game_manager : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.R)){
             Destroy(GameObject.FindWithTag("Player"));
             Instantiate(player_prefab);
+            gameover.SetActive(false);
         }
 
         if(Input.GetKeyDown(KeyCode.Alpha1)){
