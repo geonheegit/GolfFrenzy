@@ -15,6 +15,9 @@ TagManager:
   - JumpPad
   - RopeEndPoint
   - GameOver
+  - BG_forest
+  - TrailForRope
+  - Arrow
   layers:
   - Default
   - TransparentFX

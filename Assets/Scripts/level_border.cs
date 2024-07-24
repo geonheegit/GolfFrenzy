@@ -62,23 +62,29 @@ public class level_border : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
+        float playerYposOffset = 1.23f;
+        float playerXpos;
+        float playerYpos;
+
         if (other.tag == "Player"){
-            if (gameObject.name == "t_1" && other.transform.position.x < transform.position.x){ // 플레이어가 왼쪽에서 오른쪽으로 넘어갈 때
+            playerXpos = other.transform.position.x;
+            playerYpos = other.transform.position.y + playerYposOffset;
+
+            if (gameObject.name == "t_1" && playerXpos < transform.position.x){ // 플레이어가 왼쪽에서 오른쪽으로 넘어갈 때
                 gm.currentCamPos = 1;
 
             }
-            else if (gameObject.name == "t_1" && other.transform.position.x > transform.position.x){ // 플레이어가 오른쪽에서 왼쪽으로 넘어갈 때
+            else if (gameObject.name == "t_1" && playerXpos > transform.position.x){ // 플레이어가 오른쪽에서 왼쪽으로 넘어갈 때
                 gm.currentCamPos = 0;
 
             }
 
-            else if (gameObject.name == "1_2" && other.transform.position.x < transform.position.x){
+            else if (gameObject.name == "1_2" && playerYpos < transform.position.y){
                 gm.currentCamPos = 2;
 
             }
-            else if (gameObject.name == "1_2" && other.transform.position.x > transform.position.x){ // 플레이어가 오른쪽에서 왼쪽으로 넘어갈 때
+            else if (gameObject.name == "1_2" && playerYpos > transform.position.y){
                 gm.currentCamPos = 1;
-
             }
 
             else if (gameObject.name == "2_3" && other.transform.position.x < transform.position.x){
@@ -99,38 +105,38 @@ public class level_border : MonoBehaviour
 
             }
 
-            else if (gameObject.name == "4_5" && other.transform.position.y < transform.position.y){
+            else if (gameObject.name == "4_5" && other.transform.position.x < transform.position.x){
                 gm.currentCamPos = 5;
 
             }
-            else if (gameObject.name == "4_5" && other.transform.position.y > transform.position.y){ // 플레이어가 아래에서 위로 넘어갈 때
+            else if (gameObject.name == "4_5" && other.transform.position.x > transform.position.x){ // 플레이어가 아래에서 위로 넘어갈 때
                 gm.currentCamPos = 4;
 
             }
 
-            else if (gameObject.name == "5_6" && other.transform.position.y < transform.position.y){
+            else if (gameObject.name == "5_6" && other.transform.position.x < transform.position.x){
                 gm.currentCamPos = 6;
 
             }
-            else if (gameObject.name == "5_6" && other.transform.position.y > transform.position.y){ // 플레이어가 아래에서 위로 넘어갈 때
+            else if (gameObject.name == "5_6" && other.transform.position.x > transform.position.x){ // 플레이어가 아래에서 위로 넘어갈 때
                 gm.currentCamPos = 5;
 
             }
 
-            else if (gameObject.name == "6_7" && other.transform.position.y < transform.position.y){
+            else if (gameObject.name == "6_7" && other.transform.position.x < transform.position.x){
                 gm.currentCamPos = 7;
 
             }
-            else if (gameObject.name == "6_7" && other.transform.position.y > transform.position.y){ // 플레이어가 아래에서 위로 넘어갈 때
+            else if (gameObject.name == "6_7" && other.transform.position.x > transform.position.x){ // 플레이어가 아래에서 위로 넘어갈 때
                 gm.currentCamPos = 6;
 
             }
 
-            else if (gameObject.name == "7_UG" && other.transform.position.y < transform.position.y){
+            else if (gameObject.name == "7_UG" && other.transform.position.x < transform.position.x){
                 gm.currentCamPos = 8; // camPos8 = UG
 
             }
-            else if (gameObject.name == "7_UG" && other.transform.position.y > transform.position.y){ // 플레이어가 아래에서 위로 넘어갈 때
+            else if (gameObject.name == "7_UG" && other.transform.position.x > transform.position.x){ // 플레이어가 아래에서 위로 넘어갈 때
                 gm.currentCamPos = 7;
 
             }
