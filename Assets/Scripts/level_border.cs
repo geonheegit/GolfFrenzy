@@ -66,6 +66,14 @@ public class level_border : MonoBehaviour
             mainCam.transform.position = Vector3.Lerp(mainCam.transform.position, camPositions[gm.currentCamPos].transform.position + new Vector3(0, 0, -1f), Time.smoothDeltaTime);
             mainCam.orthographicSize = Mathf.SmoothDamp(mainCam.orthographicSize, 10, ref velFloat, smoothTime);
         }
+        else if (gm.currentCamPos == 11){
+            mainCam.transform.position = Vector3.Lerp(mainCam.transform.position, camPositions[gm.currentCamPos].transform.position + new Vector3(0, 0, -1f), Time.smoothDeltaTime);
+            mainCam.orthographicSize = Mathf.SmoothDamp(mainCam.orthographicSize, 13, ref velFloat, smoothTime);
+        }
+        else if (gm.currentCamPos == 12){
+            mainCam.transform.position = Vector3.Lerp(mainCam.transform.position, camPositions[gm.currentCamPos].transform.position + new Vector3(0, 0, -1f), Time.smoothDeltaTime);
+            mainCam.orthographicSize = Mathf.SmoothDamp(mainCam.orthographicSize, 7, ref velFloat, smoothTime);
+        }
     }
 
     void OnTriggerEnter2D(Collider2D other)
@@ -164,6 +172,24 @@ public class level_border : MonoBehaviour
             }
             else if (gameObject.name == "9_10" && playerYpos > transform.position.y){ // 플레이어가 아래에서 위로 넘어갈 때
                 gm.currentCamPos = 9;
+
+            }
+
+            else if (gameObject.name == "10_11" && playerXpos < transform.position.x){
+                gm.currentCamPos = 11;
+
+            }
+            else if (gameObject.name == "10_11" && playerXpos > transform.position.x){ // 플레이어가 아래에서 위로 넘어갈 때
+                gm.currentCamPos = 10;
+
+            }
+
+            else if (gameObject.name == "11_12" && playerXpos < transform.position.x){
+                gm.currentCamPos = 12;
+
+            }
+            else if (gameObject.name == "11_12" && playerXpos > transform.position.x){ // 플레이어가 아래에서 위로 넘어갈 때
+                gm.currentCamPos = 11;
 
             }
         }
