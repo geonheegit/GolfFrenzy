@@ -36,15 +36,15 @@ public class level_border : MonoBehaviour
         }
         else if (gm.currentCamPos == 3){ // 3 = levelBorder 3
             mainCam.transform.position = Vector3.Lerp(mainCam.transform.position, camPositions[gm.currentCamPos].transform.position + new Vector3(0, 0, -1f), Time.smoothDeltaTime);
-            mainCam.orthographicSize = Mathf.SmoothDamp(mainCam.orthographicSize, 7, ref velFloat, smoothTime);
+            mainCam.orthographicSize = Mathf.SmoothDamp(mainCam.orthographicSize, 13, ref velFloat, smoothTime);
         }
         else if (gm.currentCamPos == 4){ // 4 = levelBorder 4
             mainCam.transform.position = Vector3.Lerp(mainCam.transform.position, camPositions[gm.currentCamPos].transform.position + new Vector3(0, 0, -1f), Time.smoothDeltaTime);
-            mainCam.orthographicSize = Mathf.SmoothDamp(mainCam.orthographicSize, 7, ref velFloat, smoothTime);
+            mainCam.orthographicSize = Mathf.SmoothDamp(mainCam.orthographicSize, 15, ref velFloat, smoothTime);
         }
         else if (gm.currentCamPos == 5){ // 5 = levelBorder 5
             mainCam.transform.position = Vector3.Lerp(mainCam.transform.position, camPositions[gm.currentCamPos].transform.position + new Vector3(0, 0, -1f), Time.smoothDeltaTime);
-            mainCam.orthographicSize = Mathf.SmoothDamp(mainCam.orthographicSize, 7, ref velFloat, smoothTime);
+            mainCam.orthographicSize = Mathf.SmoothDamp(mainCam.orthographicSize, 10, ref velFloat, smoothTime);
         }
         else if (gm.currentCamPos == 6){ // 6 = levelBorder 6
             mainCam.transform.position = Vector3.Lerp(mainCam.transform.position, camPositions[gm.currentCamPos].transform.position + new Vector3(0, 0, -1f), Time.smoothDeltaTime);
@@ -54,7 +54,15 @@ public class level_border : MonoBehaviour
             mainCam.transform.position = Vector3.Lerp(mainCam.transform.position, camPositions[gm.currentCamPos].transform.position + new Vector3(0, 0, -1f), Time.smoothDeltaTime);
             mainCam.orthographicSize = Mathf.SmoothDamp(mainCam.orthographicSize, 7, ref velFloat, smoothTime);
         }
-        else if (gm.currentCamPos == 8){ // 8 = UNDERGROUND
+        else if (gm.currentCamPos == 8){
+            mainCam.transform.position = Vector3.Lerp(mainCam.transform.position, camPositions[gm.currentCamPos].transform.position + new Vector3(0, 0, -1f), Time.smoothDeltaTime);
+            mainCam.orthographicSize = Mathf.SmoothDamp(mainCam.orthographicSize, 7, ref velFloat, smoothTime);
+        }
+        else if (gm.currentCamPos == 9){
+            mainCam.transform.position = Vector3.Lerp(mainCam.transform.position, camPositions[gm.currentCamPos].transform.position + new Vector3(0, 0, -1f), Time.smoothDeltaTime);
+            mainCam.orthographicSize = Mathf.SmoothDamp(mainCam.orthographicSize, 7, ref velFloat, smoothTime);
+        }
+        else if (gm.currentCamPos == 10){
             mainCam.transform.position = Vector3.Lerp(mainCam.transform.position, camPositions[gm.currentCamPos].transform.position + new Vector3(0, 0, -1f), Time.smoothDeltaTime);
             mainCam.orthographicSize = Mathf.SmoothDamp(mainCam.orthographicSize, 10, ref velFloat, smoothTime);
         }
@@ -87,57 +95,75 @@ public class level_border : MonoBehaviour
                 gm.currentCamPos = 1;
             }
 
-            else if (gameObject.name == "2_3" && other.transform.position.x < transform.position.x){
+            else if (gameObject.name == "2_3" && playerXpos < transform.position.x){
                 gm.currentCamPos = 3;
 
             }
-            else if (gameObject.name == "2_3" && other.transform.position.x > transform.position.x){ // 플레이어가 오른쪽에서 왼쪽으로 넘어갈 때
+            else if (gameObject.name == "2_3" && playerXpos > transform.position.x){ // 플레이어가 오른쪽에서 왼쪽으로 넘어갈 때
                 gm.currentCamPos = 2;
 
             }
 
-            else if (gameObject.name == "3_4" && other.transform.position.x < transform.position.x){
+            else if (gameObject.name == "3_4" && playerXpos < transform.position.x){
                 gm.currentCamPos = 4;
 
             }
-            else if (gameObject.name == "3_4" && other.transform.position.x > transform.position.x){ // 플레이어가 오른쪽에서 왼쪽으로 넘어갈 때
+            else if (gameObject.name == "3_4" && playerXpos > transform.position.x){ // 플레이어가 오른쪽에서 왼쪽으로 넘어갈 때
                 gm.currentCamPos = 3;
 
             }
 
-            else if (gameObject.name == "4_5" && other.transform.position.x < transform.position.x){
+            else if (gameObject.name == "4_5" && playerXpos < transform.position.x){
                 gm.currentCamPos = 5;
 
             }
-            else if (gameObject.name == "4_5" && other.transform.position.x > transform.position.x){ // 플레이어가 아래에서 위로 넘어갈 때
+            else if (gameObject.name == "4_5" && playerXpos > transform.position.x){ // 플레이어가 아래에서 위로 넘어갈 때
                 gm.currentCamPos = 4;
 
             }
 
-            else if (gameObject.name == "5_6" && other.transform.position.x < transform.position.x){
+            else if (gameObject.name == "5_6" && playerYpos < transform.position.y){
                 gm.currentCamPos = 6;
 
             }
-            else if (gameObject.name == "5_6" && other.transform.position.x > transform.position.x){ // 플레이어가 아래에서 위로 넘어갈 때
+            else if (gameObject.name == "5_6" && playerYpos > transform.position.y){ // 플레이어가 아래에서 위로 넘어갈 때
                 gm.currentCamPos = 5;
 
             }
 
-            else if (gameObject.name == "6_7" && other.transform.position.x < transform.position.x){
+            else if (gameObject.name == "6_7" && playerYpos < transform.position.y){
                 gm.currentCamPos = 7;
 
             }
-            else if (gameObject.name == "6_7" && other.transform.position.x > transform.position.x){ // 플레이어가 아래에서 위로 넘어갈 때
+            else if (gameObject.name == "6_7" && playerYpos > transform.position.y){ // 플레이어가 아래에서 위로 넘어갈 때
                 gm.currentCamPos = 6;
 
             }
 
-            else if (gameObject.name == "7_UG" && other.transform.position.x < transform.position.x){
-                gm.currentCamPos = 8; // camPos8 = UG
+            else if (gameObject.name == "7_8" && playerYpos < transform.position.y){
+                gm.currentCamPos = 8;
 
             }
-            else if (gameObject.name == "7_UG" && other.transform.position.x > transform.position.x){ // 플레이어가 아래에서 위로 넘어갈 때
+            else if (gameObject.name == "7_8" && playerYpos > transform.position.y){ // 플레이어가 아래에서 위로 넘어갈 때
                 gm.currentCamPos = 7;
+
+            }
+
+            else if (gameObject.name == "8_9" && playerYpos < transform.position.y){
+                gm.currentCamPos = 9;
+
+            }
+            else if (gameObject.name == "8_9" && playerYpos > transform.position.y){ // 플레이어가 아래에서 위로 넘어갈 때
+                gm.currentCamPos = 8;
+
+            }
+
+            else if (gameObject.name == "9_10" && playerYpos < transform.position.y){
+                gm.currentCamPos = 10;
+
+            }
+            else if (gameObject.name == "9_10" && playerYpos > transform.position.y){ // 플레이어가 아래에서 위로 넘어갈 때
+                gm.currentCamPos = 9;
 
             }
         }
