@@ -12,6 +12,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: spike
       objectReference: {fileID: 0}
+    - target: {fileID: 3626916397498700004, guid: d7222e23a3fe9aa408035afb35d28c25, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
     - target: {fileID: 7878350319992209165, guid: d7222e23a3fe9aa408035afb35d28c25, type: 3}
       propertyPath: m_LocalPosition.x
       value: 80.00318
@@ -155,3 +159,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d71a341d76f87444aba88a569b7c163, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameover: {fileID: 0}
