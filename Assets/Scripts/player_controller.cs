@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Mathematics;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
 
 public class player_controller : MonoBehaviour
 {
@@ -11,6 +13,8 @@ public class player_controller : MonoBehaviour
     private BoxCollider2D boxCollider2D;
     public float moveInput;
     public float jumppadHoriVel;
+
+    private GameObject screenLight;
     
     [SerializeField] Rigidbody2D rb;
     [SerializeField] float moveSpeed;
@@ -42,6 +46,7 @@ public class player_controller : MonoBehaviour
         spawnpoint = GameObject.FindWithTag("Spawn").transform.position;
         anim = GetComponent<Animator>();
         sr = GetComponent<SpriteRenderer>();
+        screenLight = GameObject.Find("ScreenLight");
         boxCollider2D = GetComponent<BoxCollider2D>();
         transform.position = spawnpoint;
 
@@ -71,10 +76,12 @@ public class player_controller : MonoBehaviour
         
         if(moveInput > 0){ //Flip
             sr.flipX = false;
+            screenLight.transform.rotation = Quaternion.Euler(0, 0, -90);
             boxCollider2D.offset = normalColliderOffset;
         }
         else if(moveInput < 0){
             sr.flipX = true;
+            screenLight.transform.rotation = Quaternion.Euler(0, 0, 90);
             boxCollider2D.offset = new Vector2(normalColliderOffset.x - colliderXOffset, normalColliderOffset.y);
             
         }

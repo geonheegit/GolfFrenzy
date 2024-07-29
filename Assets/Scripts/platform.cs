@@ -27,10 +27,10 @@ public class platform : MonoBehaviour
     }
 
     void Update(){
-        if(Input.GetKeyDown(KeyCode.J)){
+        if(Input.GetAxisRaw("Vertical") < 0){
             isGoDown = true;
         }
-        if(Input.GetKeyUp(KeyCode.J)){
+        if(Input.GetAxisRaw("Vertical") >= 0){
             isGoDown = false;
         }
 

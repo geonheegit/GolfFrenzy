@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2914627997945052594}
   - component: {fileID: 2552272204610318815}
+  - component: {fileID: 8877326180044419491}
   m_Layer: 0
   m_Name: fence
   m_TagString: Untagged
@@ -52,7 +53,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -84,3 +85,42 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &8877326180044419491
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5004751227112712294}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7db70e0ea77f5ac47a8f4565a9406397, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ShadowGroup: 0
+  m_ComponentVersion: 1
+  m_HasRenderer: 1
+  m_UseRendererSilhouette: 1
+  m_CastsShadows: 1
+  m_SelfShadows: 0
+  m_ApplyToSortingLayers: 00000000
+  m_ShapePath:
+  - {x: -0.46602857, y: -0.3980856, z: 0}
+  - {x: -0.4637637, y: 0.16707897, z: 0}
+  - {x: -0.3243754, y: 0.16934395, z: 0}
+  - {x: -0.3136704, y: 0.08832598, z: -0.000000059604645}
+  - {x: 0.30914092, y: 0.09512043, z: -0.000000059604645}
+  - {x: 0.34990668, y: 0.17665195, z: -0.000000059604645}
+  - {x: 0.4314382, y: 0.17665195, z: -0.000000059604645}
+  - {x: 0.4518211, y: 0.122297525, z: -0.000000059604645}
+  - {x: 0.46602845, y: -0.3890264, z: 0}
+  - {x: 0.31140566, y: -0.4008639, z: -0.000000059604645}
+  - {x: 0.30687594, y: -0.21968246, z: -0.000000059604645}
+  - {x: -0.30687606, y: -0.2219472, z: -0.000000059604645}
+  - {x: -0.3136704, y: -0.4008639, z: -0.000000059604645}
+  m_ShapePathHash: 836661535
+  m_Mesh: {fileID: 0}
+  m_InstanceId: 113254
+  m_LocalBounds:
+    m_Center: {x: -0.000000059604645, y: -0.112105966, z: 0}
+    m_Extent: {x: 0.4660285, y: 0.28875792, z: 0}
