@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: -2648840321480707289}
   - component: {fileID: 2847400040689184824}
   - component: {fileID: 5759388735369621811}
+  - component: {fileID: -5645826820309305181}
   m_Layer: 0
   m_Name: TVMAN
   m_TagString: Player
@@ -203,6 +204,37 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.3554031, y: 0.6249634}
   m_EdgeRadius: 0
+--- !u!114 &-5645826820309305181
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 464192368017930253}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7db70e0ea77f5ac47a8f4565a9406397, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ShadowGroup: 0
+  m_ComponentVersion: 1
+  m_HasRenderer: 1
+  m_UseRendererSilhouette: 1
+  m_CastsShadows: 1
+  m_SelfShadows: 0
+  m_ApplyToSortingLayers: 00000000
+  m_ShapePath:
+  - {x: -0.06956347, y: 0.16190596, z: 0}
+  - {x: -0.07239169, y: 0.77601576, z: 0}
+  - {x: 0.25028136, y: 0.781672, z: 0}
+  - {x: 0.24431403, y: 0.53124034, z: 0}
+  - {x: 0.19654715, y: 0.15342169, z: 0}
+  m_ShapePathHash: 1515420278
+  m_Mesh: {fileID: 0}
+  m_InstanceId: 224164
+  m_LocalBounds:
+    m_Center: {x: 0.08894484, y: 0.46754682, z: 0}
+    m_Extent: {x: 0.16133653, y: 0.31412515, z: 0}
 --- !u!1 &4364989472994640233
 GameObject:
   m_ObjectHideFlags: 0

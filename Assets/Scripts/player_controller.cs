@@ -110,20 +110,25 @@ public class player_controller : MonoBehaviour
         float rayOffset = 0.4f;
         float leftRayPosX = -0.25f;
         float rightRayPosX = 0.65f;
+        float origin = 0.6f;
+        float length = 0.25f;
         RaycastHit2D hitLeft;
         RaycastHit2D hitRight;
         if (!sr.flipX){
-            hitLeft = Physics2D.Raycast(rb.position + new Vector2(leftRayPosX, 0.7f), Vector3.down, 0.7f, LayerMask.GetMask("Ground"));
-            Debug.DrawRay(rb.position + new Vector2(leftRayPosX, 0.7f), Vector3.down * 0.7f, new Color(1, 0, 0));
-            hitRight = Physics2D.Raycast(rb.position + new Vector2(rightRayPosX, 0.7f), Vector3.down, 0.7f, LayerMask.GetMask("Ground"));
-            Debug.DrawRay(rb.position + new Vector2(rightRayPosX, 0.7f), Vector3.down * 0.7f, new Color(0, 1, 0));
+            hitLeft = Physics2D.Raycast(rb.position + new Vector2(leftRayPosX, origin), Vector3.down, length, LayerMask.GetMask("Ground"));
+            Debug.DrawRay(rb.position + new Vector2(leftRayPosX, origin), Vector3.down * length, new Color(1, 0, 0));
+            hitRight = Physics2D.Raycast(rb.position + new Vector2(rightRayPosX, origin), Vector3.down, length, LayerMask.GetMask("Ground"));
+            Debug.DrawRay(rb.position + new Vector2(rightRayPosX, origin), Vector3.down * length, new Color(0, 1, 0));
         }
         else{
-            hitLeft = Physics2D.Raycast(rb.position + new Vector2(leftRayPosX - rayOffset, 0.7f), Vector3.down, 0.7f, LayerMask.GetMask("Ground"));
-            Debug.DrawRay(rb.position + new Vector2(leftRayPosX - rayOffset, 0.7f), Vector3.down * 0.7f, new Color(1, 0, 0));
-            hitRight = Physics2D.Raycast(rb.position + new Vector2(rightRayPosX - rayOffset, 0.7f), Vector3.down, 0.7f, LayerMask.GetMask("Ground"));
-            Debug.DrawRay(rb.position + new Vector2(rightRayPosX - rayOffset, 0.7f), Vector3.down * 0.7f, new Color(0, 1, 0));
+            hitLeft = Physics2D.Raycast(rb.position + new Vector2(leftRayPosX - rayOffset, length), Vector3.down, length, LayerMask.GetMask("Ground"));
+            Debug.DrawRay(rb.position + new Vector2(leftRayPosX - rayOffset, length), Vector3.down * length, new Color(1, 0, 0));
+            hitRight = Physics2D.Raycast(rb.position + new Vector2(rightRayPosX - rayOffset, length), Vector3.down, length, LayerMask.GetMask("Ground"));
+            Debug.DrawRay(rb.position + new Vector2(rightRayPosX - rayOffset, length), Vector3.down * length, new Color(0, 1, 0));
         }
+
+        // Debug.Log(hitLeft.collider);
+        // Debug.Log(hitRight.collider);
         
         if (hitLeft.collider != null || hitRight.collider != null)
         {
