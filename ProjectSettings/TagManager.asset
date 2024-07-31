@@ -18,6 +18,7 @@ TagManager:
   - BG_forest
   - TrailForRope
   - Arrow
+  - spark1
   layers:
   - Default
   - TransparentFX
