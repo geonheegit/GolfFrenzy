@@ -30,8 +30,8 @@ public class elevatorBody : MonoBehaviour
     void Update()
     {
         if (is_upward_on){
-            transform.position += new Vector3(0, elevator_speed / 100, 0);
-            player.transform.position += new Vector3(0, elevator_speed / 100, 0);
+            transform.position += new Vector3(0, elevator_speed * Time.deltaTime, 0);
+            player.transform.position += new Vector3(0, elevator_speed * Time.deltaTime, 0);
 
             for (int i = 0; i < transform.childCount; i++){
                 if (transform.GetChild(i).tag == "spark1"){
@@ -41,8 +41,8 @@ public class elevatorBody : MonoBehaviour
             }
         }
         else if (is_downward_on){
-            transform.position += new Vector3(0, -elevator_speed / 100, 0);
-            player.transform.position += new Vector3(0, -elevator_speed / 100, 0);
+            transform.position += new Vector3(0, -elevator_speed * Time.deltaTime, 0);
+            player.transform.position += new Vector3(0, -elevator_speed * Time.deltaTime, 0);
         }
     }
 

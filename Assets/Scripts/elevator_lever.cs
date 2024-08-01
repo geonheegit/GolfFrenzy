@@ -15,8 +15,7 @@ public class elevator_lever : MonoBehaviour
     void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
-        elevatorBody = GameObject.Find("Elevator1");
-        elevatorBodyScript = GameObject.Find("Elevator1").GetComponent<elevatorBody>();
+        elevatorBodyScript = elevatorBody.GetComponent<elevatorBody>();
         spriteRenderer.sprite = lever_sprites[0];
         is_touching = false;
         is_controllable = true;

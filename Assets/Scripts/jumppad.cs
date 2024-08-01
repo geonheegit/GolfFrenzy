@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Data;
 using UnityEditor.Callbacks;
 using UnityEngine;
 
@@ -28,23 +29,24 @@ public class jumppad : MonoBehaviour
     }
 
     IEnumerator SpringPowerControl(int direction){ // direction: 1 = E, 2 = W
+
         float equalDivide = 3.5f;
         float initialSpringpower = springPower / equalDivide;
 
         playerRb.AddForce(new Vector2(0, 10), ForceMode2D.Impulse);
 
         if (direction == 1){ // E
-            player_Controller.jumppadHoriVel = springPower / equalDivide;
+            player_Controller.jumppadHoriVel += springPower / equalDivide;
             for(int i = 0; i < 5; i++){
                 player_Controller.jumppadHoriVel -= initialSpringpower / 5;
-                yield return new WaitForSeconds(0.08f);
+                yield return new WaitForSeconds(0.04f);
             }
         }
         else if (direction == 2){ // W
-            player_Controller.jumppadHoriVel = -springPower / equalDivide;
+            player_Controller.jumppadHoriVel += -springPower / equalDivide;
             for(int i = 0; i < 5; i++){
                 player_Controller.jumppadHoriVel += initialSpringpower / 5;
-                yield return new WaitForSeconds(0.08f);
+                yield return new WaitForSeconds(0.04f);
             }
         }
     }

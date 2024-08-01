@@ -5,14 +5,14 @@ using UnityEngine;
 
 public class moving_object : MonoBehaviour
 {
-    [SerializeField] Vector3 pos1;
-    [SerializeField] Vector3 pos2;
     [SerializeField] float speed;
     [SerializeField] float move_time;
-    private bool go;
+    public bool go;
     private bool moveTogether = false;
     private GameObject player;
     public bool horizontal = true;
+    public bool left_active = false;
+    public bool right_active = false;
 
     void Start()
     {
@@ -42,10 +42,10 @@ public class moving_object : MonoBehaviour
         }
         
         if (moveTogether){
-            if (horizontal && go){
+            if (horizontal && go && right_active){
                 player.transform.position += new Vector3(1, 0, 0) * speed * Time.deltaTime;
             }
-            else if (horizontal && !go){
+            else if (horizontal && !go && left_active){
                 player.transform.position += new Vector3(-1, 0, 0) * speed * Time.deltaTime;
             }
             else if (!horizontal && go){
