@@ -7,7 +7,7 @@ public class spikecontroller : MonoBehaviour
     [SerializeField] GameObject gameover;
     void OnTriggerEnter2D(Collider2D other){
         if(other.tag == "Player"){
-            gameover.SetActive(true);
+            Time.timeScale = 0;
         } 
     }
 
