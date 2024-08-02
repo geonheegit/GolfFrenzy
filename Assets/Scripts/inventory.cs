@@ -8,6 +8,7 @@ public class inventory : MonoBehaviour
 {
     [SerializeField] int numberOfItems = 5;
     private Sprite[] items;
+    private int not_empty_count = 0;
 
     void Start()
     {
@@ -19,23 +20,28 @@ public class inventory : MonoBehaviour
             if (items[i] == null){
                 items[i] = item;
                 break;
+                
             }
             else{
-                Debug.Log("Inventory is full.");
+                not_empty_count += 1;
             }
         }
 
+        if (not_empty_count == numberOfItems){
+            Debug.Log("Inventory is full.");
+        }
+
         UpdateInventory();
+        not_empty_count = 0;
     }
 
     private void UpdateInventory(){
         for (int i = 0; i < numberOfItems; i++){
-            for (int j = 0; j < transform.GetChild(i).transform.GetChild(j).childCount; j++){
+            for (int j = 0; j < transform.GetChild(i).childCount; j++){
                 if (transform.GetChild(i).transform.GetChild(j).name == "item_img"){
-                    transform.GetChild(i).transform.GetChild(j).GetComponent<Image>().sprite = items[i];
+                    transform.GetChild(i).transform.GetChild(j).GetComponent<Image>().sprite = items[i]; // Slot의 item_img의 sprite를 keycards.cs에서 전달받은 sprite로 변경.
                     
                 }
-                Debug.Log(transform.GetChild(i).transform.GetChild(j).name);
             }    
         }
     }

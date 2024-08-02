@@ -19,6 +19,7 @@ public class keycards : MonoBehaviour
     {
         if (other.gameObject.tag == "Player"){
             inventory.AddItem(gameObject.GetComponent<SpriteRenderer>().sprite);
+            Destroy(gameObject);
         }
     }
 }
