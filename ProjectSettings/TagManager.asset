@@ -20,6 +20,7 @@ TagManager:
   - Arrow
   - spark1
   - Inventory
+  - FanControlTower
   layers:
   - Default
   - TransparentFX
