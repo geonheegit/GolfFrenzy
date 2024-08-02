@@ -21,25 +21,24 @@ public class fan_control_tower : MonoBehaviour
     {
         if (contacted){
             if (Input.GetKeyDown(KeyCode.E)){
-                if (powered){
-                    if (!turnedOn){
-                        if (inventory.GetItemName(item_Selection.slotNumber) == "Green Keycard"){
+                if (!turnedOn){
+                    if (inventory.GetItemName(item_Selection.slotNumber) == "Green Keycard"){
+                        if (powered){
                             Debug.Log("On");
                             turnedOn = true;
 
                             // Lights
-                            
                         }
                         else{
-                            Debug.Log("Green Keycard required.");
-                        }
+                            Debug.Log("Need Power Supply.");
+                        }    
                     }
                     else{
-                        Debug.Log("The Fan Control Tower already turned on.");
+                        Debug.Log("Green Keycard required.");
                     }
                 }
                 else{
-                    Debug.Log("Need Power Supply.");
+                    Debug.Log("The Fan Control Tower already turned on.");
                 }
             }
         }
