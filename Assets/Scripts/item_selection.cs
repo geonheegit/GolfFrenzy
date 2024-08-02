@@ -9,9 +9,11 @@ public class item_selection : MonoBehaviour
     [SerializeField] Sprite[] sprites;
     private Image image;
     private float spacing;
+    public int slotNumber;
     void Start()
     {
         image = gameObject.GetComponent<Image>();
+        slotNumber = 1;
         StartCoroutine(LoopAnimation());
         spacing = Mathf.Abs(GameObject.Find("Slot1").GetComponent<RectTransform>().anchoredPosition.x - GameObject.Find("Slot2").GetComponent<RectTransform>().anchoredPosition.x);
     }
@@ -30,22 +32,27 @@ public class item_selection : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Keypad1)){
             spacing = Mathf.Abs(GameObject.Find("Slot1").GetComponent<RectTransform>().anchoredPosition.x - GameObject.Find("Slot2").GetComponent<RectTransform>().anchoredPosition.x);
             gameObject.GetComponent<RectTransform>().anchoredPosition = new Vector3(0, 0, 0);
+            slotNumber = 1;
         }
         else if (Input.GetKeyDown(KeyCode.Keypad2)){
             spacing = Mathf.Abs(GameObject.Find("Slot1").GetComponent<RectTransform>().anchoredPosition.x - GameObject.Find("Slot2").GetComponent<RectTransform>().anchoredPosition.x);
             gameObject.GetComponent<RectTransform>().anchoredPosition = new Vector3(spacing, 0, 0);
+            slotNumber = 2;
         }
         else if (Input.GetKeyDown(KeyCode.Keypad3)){
             spacing = Mathf.Abs(GameObject.Find("Slot1").GetComponent<RectTransform>().anchoredPosition.x - GameObject.Find("Slot2").GetComponent<RectTransform>().anchoredPosition.x);
             gameObject.GetComponent<RectTransform>().anchoredPosition = new Vector3(spacing * 2, 0, 0);
+            slotNumber = 3;
         }
         else if (Input.GetKeyDown(KeyCode.Keypad4)){
             spacing = Mathf.Abs(GameObject.Find("Slot1").GetComponent<RectTransform>().anchoredPosition.x - GameObject.Find("Slot2").GetComponent<RectTransform>().anchoredPosition.x);
             gameObject.GetComponent<RectTransform>().anchoredPosition = new Vector3(spacing * 3, 0, 0);
+            slotNumber = 4;
         }
         else if (Input.GetKeyDown(KeyCode.Keypad5)){
             spacing = Mathf.Abs(GameObject.Find("Slot1").GetComponent<RectTransform>().anchoredPosition.x - GameObject.Find("Slot2").GetComponent<RectTransform>().anchoredPosition.x);
             gameObject.GetComponent<RectTransform>().anchoredPosition = new Vector3(spacing * 4, 0, 0);
+            slotNumber = 5;
         }
     }
 }
