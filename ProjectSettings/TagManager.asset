@@ -19,6 +19,7 @@ TagManager:
   - TrailForRope
   - Arrow
   - spark1
+  - Inventory
   layers:
   - Default
   - TransparentFX
