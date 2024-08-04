@@ -21,6 +21,7 @@ TagManager:
   - spark1
   - Inventory
   - FanControlTower
+  - BigDoor
   layers:
   - Default
   - TransparentFX

@@ -7,6 +7,7 @@ public class game_manager : MonoBehaviour
     [SerializeField] GameObject player_prefab;
     [SerializeField] GameObject checkpoint_prefab;
     [SerializeField] GameObject gameover;
+    public AudioSource doorOpenSFX;
 
     public int currentCamPos; // level_border.cs
 
@@ -20,6 +21,11 @@ public class game_manager : MonoBehaviour
         }
 
         currentCamPos = 0;
+    }
+
+    void Start()
+    {
+        doorOpenSFX = GameObject.Find("DoorSound").GetComponent<AudioSource>();
     }
 
     void Update(){
@@ -41,6 +47,22 @@ public class game_manager : MonoBehaviour
         else if(Input.GetKeyDown(KeyCode.Alpha4)){
             GameObject.FindWithTag("Player").transform.position = GameObject.Find("Debug4").transform.position;
         }
+        else if(Input.GetKeyDown(KeyCode.Alpha5)){
+            GameObject.FindWithTag("Player").transform.position = GameObject.Find("Debug5").transform.position;
+        }
         
+    }
+
+    // Door Sound
+    public IEnumerator doorSoundCut(float time, float wait_time){
+        yield return new WaitForSeconds(wait_time);
+        doorOpenSFX.time = time;
+        yield return new WaitForSeconds(2f);
+        doorOpenSFX.Stop();
+
+    }
+
+    public void PlaydoorSoundCut(){
+        StartCoroutine(doorSoundCut(11f, 2f));
     }
 }

@@ -7,10 +7,12 @@ public class power_station : MonoBehaviour
 {
     [SerializeField] AudioSource turnOnSFX;
     [SerializeField] AudioSource accessDeniedSFX;
+    [SerializeField] AudioSource leverPullSFX;
     [SerializeField] bool contacted = false;
     private item_selection item_Selection;
     private inventory inventory;
     private fan_control_tower fan_Control_Tower;
+    private big_door big_Door;
 
     private Light2D red_LED;
     private Light2D green_LED;
@@ -23,6 +25,7 @@ public class power_station : MonoBehaviour
         inventory = GameObject.FindWithTag("Inventory").GetComponent<inventory>();
         item_Selection = GameObject.Find("Selection").GetComponent<item_selection>();
         fan_Control_Tower = GameObject.FindWithTag("FanControlTower").GetComponent<fan_control_tower>();
+        big_Door = GameObject.FindWithTag("BigDoor").GetComponent<big_door>();
         
         red_LED = GameObject.Find("Red_LED_PT").GetComponent<Light2D>();
         green_LED = GameObject.Find("Green_LED_PT").GetComponent<Light2D>();
@@ -41,6 +44,7 @@ public class power_station : MonoBehaviour
                     if (inventory.GetItemName(item_Selection.slotNumber) == "Yellow Keycard"){
                         // Debug.Log("On");
                         turnOnSFX.Play();
+                        leverPullSFX.Play();
                         turnedOn = true;
 
                         // Lights
@@ -48,6 +52,9 @@ public class power_station : MonoBehaviour
 
                         // FanControlTower
                         fan_Control_Tower.powered = true;
+
+                        // Big Door
+                        big_Door.powered = true;
                         
                     }
                     else{
