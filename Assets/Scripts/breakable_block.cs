@@ -19,7 +19,7 @@ public class breakable_block : MonoBehaviour
     IEnumerator Respawn(float sec){
         yield return new WaitForSeconds(sec);
         if(respawn){
-            Debug.Log("respawned");
+            // Debug.Log("respawned");
 
             transform.position = originPos;
             

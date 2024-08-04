@@ -6,6 +6,7 @@ using UnityEngine.Rendering.Universal;
 public class big_door : MonoBehaviour
 {
     [SerializeField] Animator anim;
+    [SerializeField] AudioSource keycardTaggedSFX;
     [SerializeField] bool contacted = false;
     private item_selection item_Selection;
     private inventory inventory;
@@ -44,6 +45,7 @@ public class big_door : MonoBehaviour
                             Debug.Log("Green Keycard tagged.");
 
                             // sound
+                            keycardTaggedSFX.Play();
 
                             // img
                             greenKeyCard_verify.GetComponent<SpriteRenderer>().sprite = tagged_img;
@@ -59,6 +61,7 @@ public class big_door : MonoBehaviour
                             Debug.Log("Yellow Keycard tagged.");
 
                             // sound
+                            keycardTaggedSFX.Play();
 
                             // img
                             yellowKeyCard_verify.GetComponent<SpriteRenderer>().sprite = tagged_img;

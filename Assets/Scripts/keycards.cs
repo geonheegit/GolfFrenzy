@@ -5,9 +5,12 @@ using UnityEngine;
 public class keycards : MonoBehaviour
 {
     private inventory inventory;
+    private game_manager gm;
+    
     void Start()
     {
         inventory = GameObject.FindWithTag("Inventory").GetComponent<inventory>();
+        gm = GameObject.Find("GameManager").GetComponent<game_manager>();
     }
 
     void Update()
@@ -19,6 +22,8 @@ public class keycards : MonoBehaviour
     {
         if (other.gameObject.tag == "Player"){
             inventory.AddItem(gameObject.GetComponent<SpriteRenderer>().sprite);
+            gm.PlayItemPickUpSFX();
+
             Destroy(gameObject);
         }
     }

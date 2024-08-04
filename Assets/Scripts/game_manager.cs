@@ -8,6 +8,9 @@ public class game_manager : MonoBehaviour
     [SerializeField] GameObject checkpoint_prefab;
     [SerializeField] GameObject gameover;
     public AudioSource doorOpenSFX;
+    public int laser_charge_sfx_number = 1;
+    public int laser_blast_sfx_number = 1;
+    [SerializeField] AudioSource item_pickupSFX;
 
     public int currentCamPos; // level_border.cs
 
@@ -50,6 +53,9 @@ public class game_manager : MonoBehaviour
         else if(Input.GetKeyDown(KeyCode.Alpha5)){
             GameObject.FindWithTag("Player").transform.position = GameObject.Find("Debug5").transform.position;
         }
+        else if(Input.GetKeyDown(KeyCode.Alpha6)){
+            GameObject.FindWithTag("Player").transform.position = GameObject.Find("Debug6").transform.position;
+        }
         
     }
 
@@ -64,5 +70,8 @@ public class game_manager : MonoBehaviour
 
     public void PlaydoorSoundCut(){
         StartCoroutine(doorSoundCut(11f, 2f));
+    }
+    public void PlayItemPickUpSFX(){
+        item_pickupSFX.Play();
     }
 }
