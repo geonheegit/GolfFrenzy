@@ -22,6 +22,7 @@ TagManager:
   - Inventory
   - FanControlTower
   - BigDoor
+  - BG_factory
   layers:
   - Default
   - TransparentFX

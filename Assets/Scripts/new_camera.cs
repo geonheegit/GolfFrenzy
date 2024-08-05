@@ -28,7 +28,7 @@ public class new_camera : MonoBehaviour
         }
     }
 
-    void FixedUpdate(){
+    void Update(){
         if(isloop){
             cam.transform.position = Vector3.Lerp(cam.transform.position, transform.position, Time.smoothDeltaTime * movamp);
             cam.orthographicSize = Mathf.SmoothDamp(cam.orthographicSize, camsize, ref velFloat, smoothTime);
