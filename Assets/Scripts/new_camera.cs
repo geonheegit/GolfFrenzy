@@ -22,6 +22,12 @@ public class new_camera : MonoBehaviour
         }
     }
 
+    private void OnTriggerExit2D(Collider2D collision){
+        if(collision.tag == "Player"){
+            isloop = false;
+        }
+    }
+
     void FixedUpdate(){
         if(isloop){
             cam.transform.position = Vector3.Lerp(cam.transform.position, transform.position, Time.smoothDeltaTime * movamp);
