@@ -19,14 +19,14 @@ public class laser_detection : MonoBehaviour
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.tag == "Player"){
-            StartCoroutine(transform.parent.gameObject.GetComponent<laser>().ActiveLaser(1.5f, true));
+            StartCoroutine(transform.parent.gameObject.GetComponent<laser>().ActiveLaser(1f, true));
         }
     }
 
     void OnTriggerExit2D(Collider2D other)
     {
         if (other.gameObject.tag == "Player"){
-            StartCoroutine(transform.parent.gameObject.GetComponent<laser>().ActiveLaser(1.5f, false));
+            StartCoroutine(transform.parent.gameObject.GetComponent<laser>().ActiveLaser(1f, false));
         }
     }
 }
