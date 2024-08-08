@@ -13,6 +13,7 @@ public class player_controller : MonoBehaviour
     private BoxCollider2D boxCollider2D;
     public float moveInput;
     public float jumppadHoriVel;
+    public bool isfly;
 
     private GameObject screenLight;
     
@@ -65,7 +66,12 @@ public class player_controller : MonoBehaviour
     {
         moveInput = Input.GetAxisRaw("Horizontal");
 
-        rb.velocity = new Vector2(moveInput * moveSpeed + jumppadHoriVel, rb.velocity.y);
+        if(isfly){
+            
+        }
+        else{
+            rb.velocity = new Vector2(moveInput * moveSpeed + jumppadHoriVel, rb.velocity.y);
+        }
 
         if(is_grounded && Mathf.Abs(moveInput) > 0){ //Walk Animation
             anim.SetBool("isWalk", true);
