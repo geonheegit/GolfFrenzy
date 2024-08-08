@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 2847400040689184824}
   - component: {fileID: 5759388735369621811}
   - component: {fileID: -5645826820309305181}
+  - component: {fileID: 6794514396920016546}
   m_Layer: 0
   m_Name: TVMAN
   m_TagString: Player
@@ -232,10 +233,18 @@ MonoBehaviour:
   - {x: 0.186331, y: 0.20833483, z: 0}
   m_ShapePathHash: -533958089
   m_Mesh: {fileID: 0}
-  m_InstanceId: 292742
+  m_InstanceId: 326064
   m_LocalBounds:
     m_Center: {x: 0.097591616, y: 0.4625756, z: 0}
     m_Extent: {x: 0.14672242, y: 0.2546959, z: 0}
+--- !u!81 &6794514396920016546
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 464192368017930253}
+  m_Enabled: 1
 --- !u!1 &4364989472994640233
 GameObject:
   m_ObjectHideFlags: 0
