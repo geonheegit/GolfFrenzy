@@ -23,10 +23,10 @@ public class laser_detection : MonoBehaviour
         }
     }
 
-    void OnTriggerExit2D(Collider2D other)
-    {
-        if (other.gameObject.tag == "Player"){
-            StartCoroutine(transform.parent.gameObject.GetComponent<laser>().ActiveLaser(1f, false));
-        }
-    }
+    // void OnTriggerExit2D(Collider2D other)
+    // {
+    //     if (other.gameObject.tag == "Player"){
+    //         StartCoroutine(transform.parent.gameObject.GetComponent<laser>().ActiveLaser(1f, false));
+    //     }
+    // }
 }

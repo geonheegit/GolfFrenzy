@@ -6,6 +6,7 @@ using UnityEngine.Rendering.Universal;
 public class laser : MonoBehaviour
 {
     public bool detected = false;
+    private bool already_on = false;
     private GameObject laserEffect;
     private GameObject laserWarning;
     private game_manager gm;
@@ -57,16 +58,17 @@ public class laser : MonoBehaviour
     }
 
     public IEnumerator ActiveLaser(float time, bool on){
-        if (on){
-            laserWarning.SetActive(true);
-            laserChargeSFX.time = 0.5f; // offset
-            gm.laser_charge_sfx_number += 1;
-            laserChargeSFX.Play();
-        }
-        
-        yield return new WaitForSeconds(time);
+        if (!already_on){
+            already_on = true;
+            if (on){
+                laserWarning.SetActive(true);
+                laserChargeSFX.time = 0.5f; // offset
+                gm.laser_charge_sfx_number += 1;
+                laserChargeSFX.Play();
+            }
+            
+            yield return new WaitForSeconds(time);
 
-        if (on){
             laserEffect.SetActive(true);
             StartCoroutine(ShrinkLED_ARC(2f));
             gm.laser_charge_sfx_number -= 1;
@@ -74,14 +76,15 @@ public class laser : MonoBehaviour
             laserShotSFX.time = 0.5f; // offset
             gm.laser_blast_sfx_number += 1;
             laserShotSFX.Play();
-        }
-        else{
-            yield return new WaitForSeconds(5f);
-            laserEffect.SetActive(false);
-            gm.laser_blast_sfx_number -= 1;
-        }
 
-        laserWarning.SetActive(false);
+            yield return new WaitForSeconds(2f);
+            laserShotSFX.Stop();
+            laserEffect.SetActive(false);
+            already_on = false;
+            gm.laser_blast_sfx_number -= 1;
+
+            laserWarning.SetActive(false);
+        }
     }
 
     IEnumerator ShrinkLED_ARC(float time){
@@ -98,7 +101,7 @@ public class laser : MonoBehaviour
             laserblast_yellow_led.pointLightOuterAngle -= origin_yellow_outer_angle / 60;
         }
 
-        yield return new WaitForSeconds(3f);
+        // yield return new WaitForSeconds(2f);
 
         laserblast_red_led.pointLightInnerAngle = origin_red_inner_angle;
         laserblast_red_led.pointLightOuterAngle = origin_red_outer_angle;
