@@ -23,6 +23,8 @@ TagManager:
   - FanControlTower
   - BigDoor
   - BG_factory
+  - gravity_up
+  - gravity_down
   layers:
   - Default
   - TransparentFX
