@@ -26,6 +26,8 @@ TagManager:
   - gravity_up
   - gravity_down
   - regiontxt
+  - Harm
+  - Deathscene
   layers:
   - Default
   - TransparentFX

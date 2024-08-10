@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class regiontext : MonoBehaviour
 {
+    
     [SerializeField] string regionName;
     private regioninfo rginfo;
 
@@ -21,6 +22,7 @@ public class regiontext : MonoBehaviour
             rginfo.gofadeout = false;
 
         }
+        
     }
 
 }
