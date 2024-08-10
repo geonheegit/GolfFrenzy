@@ -28,6 +28,8 @@ TagManager:
   - regiontxt
   - Harm
   - Deathscene
+  - respawnpoints
+  - Interactives
   layers:
   - Default
   - TransparentFX

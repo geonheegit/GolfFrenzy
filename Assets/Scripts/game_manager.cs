@@ -32,11 +32,11 @@ public class game_manager : MonoBehaviour
     }
 
     void Update(){
-        if(Input.GetKeyDown(KeyCode.R)){
-            Destroy(GameObject.FindWithTag("Player"));
-            Instantiate(player_prefab);
-            gameover.SetActive(false);
-        }
+        // if(Input.GetKeyDown(KeyCode.R)){
+        //     Destroy(GameObject.FindWithTag("Player"));
+        //     Instantiate(player_prefab);
+        //     gameover.SetActive(false);
+        // }
 
         if(Input.GetKeyDown(KeyCode.Alpha1)){
             GameObject.FindWithTag("Player").transform.position = GameObject.Find("Debug1").transform.position;

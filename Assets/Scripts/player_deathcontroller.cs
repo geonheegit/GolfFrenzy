@@ -4,11 +4,13 @@ using UnityEngine;
 
 public class player_deathcontroller : MonoBehaviour
 {
-    private bool isDead;
-    [SerializeField] GameObject deathscene;
+    public bool isDead = false;
+    public GameObject deathscene;
     public GameObject respawnPos;
     private void OnTriggerEnter2D(Collider2D other){
+        
         if(other.tag == "Harm"){
+            Debug.Log("dd");
             isDead = true;
             Time.timeScale = 0f;
         }

@@ -11,11 +11,13 @@ public class player_controller : MonoBehaviour
     private Animator anim;
     private SpriteRenderer sr;
     private BoxCollider2D boxCollider2D;
+    private player_deathcontroller player_Deathcontroller;
     public float moveInput;
     public float jumppadHoriVel;
     public bool isfly;
 
     private GameObject screenLight;
+    private GameObject[] respawnpoints;
     
     [SerializeField] Rigidbody2D rb;
     [SerializeField] float moveSpeed;
@@ -44,6 +46,14 @@ public class player_controller : MonoBehaviour
 
     void Start()
     {
+        player_Deathcontroller = GetComponent<player_deathcontroller>();
+        player_Deathcontroller.deathscene.SetActive(false);
+
+        respawnpoints = GameObject.FindGameObjectsWithTag("respawnpoints");
+        foreach(GameObject spawnpoint in respawnpoints){
+            spawnpoint.GetComponent<respawn>().GetPlayerScript();
+        }
+
         spawnpoint = GameObject.FindWithTag("Spawn").transform.position;
         anim = GetComponent<Animator>();
         sr = GetComponent<SpriteRenderer>();

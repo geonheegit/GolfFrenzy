@@ -19,7 +19,7 @@ public class gravity_obj : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.tag == "Player"){
+        if (other.gameObject.tag == "Player" || other.gameObject.tag == "Interactives"){
             if (other.gameObject.GetComponent<Rigidbody2D>().gravityScale > 0 && gameObject.tag == "gravity_up"){
                 other.gameObject.GetComponent<Rigidbody2D>().gravityScale = -other.gameObject.GetComponent<Rigidbody2D>().gravityScale;
                 gravity_up_sound.Play();
