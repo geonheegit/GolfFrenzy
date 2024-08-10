@@ -25,6 +25,7 @@ TagManager:
   - BG_factory
   - gravity_up
   - gravity_down
+  - regiontxt
   layers:
   - Default
   - TransparentFX
