@@ -6,6 +6,7 @@ public class puzzle1_lever_obj_control : MonoBehaviour
 {
     [SerializeField] GameObject[] first;
     [SerializeField] GameObject[] second;
+    [SerializeField] AudioSource leverPull_SFX;
     public bool first_active = true;
 
     void Start()
@@ -20,6 +21,8 @@ public class puzzle1_lever_obj_control : MonoBehaviour
     }
 
     public void SwitchObjects(){
+        leverPull_SFX.Play();
+        
         if (!first_active){
             first_active = true;
 
