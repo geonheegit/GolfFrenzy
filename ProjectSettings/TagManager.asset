@@ -30,6 +30,7 @@ TagManager:
   - Deathscene
   - respawnpoints
   - Interactives
+  - keypad
   layers:
   - Default
   - TransparentFX
