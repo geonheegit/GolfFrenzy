@@ -31,6 +31,7 @@ TagManager:
   - respawnpoints
   - Interactives
   - keypad
+  - keypadUI
   layers:
   - Default
   - TransparentFX
