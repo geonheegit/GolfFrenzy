@@ -6,10 +6,12 @@ using UnityEngine.UI;
 public class keypad : MonoBehaviour
 {
     [SerializeField] private int keyvalue;
+    [SerializeField] AudioSource beep_SFX;
     private Button btn;
 
     public void OnClickStartButton(){
-        Debug.Log("A");
+        beep_SFX.Play();
+        // Debug.Log("A");
         keypadmanager kpm = GameObject.FindWithTag("keypad").GetComponent<keypadmanager>();
         if(keyvalue < 10){
             kpm.PasswordInput(keyvalue);

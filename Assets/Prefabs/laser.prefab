@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 7097719765558259996}
   m_Layer: 0
   m_Name: Laser Effect
-  m_TagString: Untagged
+  m_TagString: Harm
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
