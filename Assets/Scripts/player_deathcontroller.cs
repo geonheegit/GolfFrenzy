@@ -29,6 +29,7 @@ public class player_deathcontroller : MonoBehaviour
                 isDead = false;
                 deathscene.SetActive(false);
                 transform.position = respawnPos.transform.position;
+                GetComponent<Rigidbody2D>().gravityScale = 3f;
             }
         }
     }

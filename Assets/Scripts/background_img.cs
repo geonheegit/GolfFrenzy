@@ -25,20 +25,44 @@ public class background_img : MonoBehaviour
 
     }
 
+    private void Active_forest(bool tf){
+        if (tf){
+            foreach (GameObject forest in forestBG){
+                forest.SetActive(true);
+            }
+        }
+        else{
+            foreach (GameObject forest in forestBG){
+                forest.SetActive(false);
+            }
+        }
+    }
+
+    private void Active_factory(bool tf){
+        if (tf){
+            foreach (GameObject factory in factoryBG){
+                factory.SetActive(true);
+            }
+        }
+        else{
+            foreach (GameObject factory in factoryBG){
+                factory.SetActive(false);
+            }
+        }
+    }
+
 
     void Update()
     {
         parentBG.transform.position = mainCam.transform.position + new Vector3(0, 0, 1);
 
         if (currentBG == 1){
-            foreach (GameObject forest in forestBG){
-                forest.SetActive(true);
-            }
+            Active_forest(true);
+            Active_factory(false);
         }
         else if (currentBG == 2){
-            foreach (GameObject factory in factoryBG){
-                factory.SetActive(true);
-            }
+            Active_factory(true);
+            Active_forest(false);
         }
     }
 }
