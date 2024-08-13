@@ -6,9 +6,9 @@ public class bossfight1_lever : MonoBehaviour
 {
     [SerializeField] AudioSource leverpull_SFX;
     [SerializeField] AudioSource spikefall_SFX;
-    [SerializeField] GameObject spikes_parent;
+    private GameObject spikes_parent;
     private bool contacted = false;
-    private bool active_once = false;
+    public bool active_once = false;
 
     void Start()
     {
@@ -21,7 +21,8 @@ public class bossfight1_lever : MonoBehaviour
         if (contacted){
             if (Input.GetKeyDown(KeyCode.E) && !active_once){
                 active_once = true;
-                
+                spikes_parent = GameObject.FindWithTag("Falling Spikes");
+
                 leverpull_SFX.Play();
                 spikefall_SFX.Play();
 

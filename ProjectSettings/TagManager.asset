@@ -32,6 +32,9 @@ TagManager:
   - Interactives
   - keypad
   - keypadUI
+  - Boss
+  - Falling Spikes
+  - Falling Objects
   layers:
   - Default
   - TransparentFX

@@ -1,0 +1,548 @@
+fileFormatVersion: 2
+guid: b84d327d02a7ba14bb1df18f318de35e
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: 62a9f0aa5b59740cfbadc7e5f9823bb0, type: 3}
+  textureImporterSettings:
+    alphaSource: 1
+    mipMapMode: 0
+    enableMipMap: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+    convertToNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+    swizzle: 50462976
+    isReadable: 0
+    streamingMipmaps: 0
+    streamingMipmapsPriority: 0
+    vTOnly: 0
+    ignoreMipmapLimit: 0
+    nPOTScale: 1
+    sRGBTexture: 1
+    spriteMode: 2
+    spriteExtrude: 1
+    spriteMeshType: 1
+    alignment: 0
+    spritePivot: {x: 0.5, y: 0.5}
+    spritePixelsToUnits: 16
+    spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+    spriteGenerateFallbackPhysicsShape: 0
+    generateCubemap: 6
+    cubemapConvolution: 0
+    seamlessCubemap: 0
+    alphaIsTransparency: 1
+    spriteTessellationDetail: -1
+    textureType: 8
+    textureShape: 1
+    singleChannelComponent: 0
+    flipbookRows: 0
+    flipbookColumns: 0
+    ignorePngGamma: 0
+    cookieMode: 0
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+    normalMap: 0
+    textureFormat: 0
+    maxTextureSize: 0
+    lightmap: 0
+    compressionQuality: 0
+    linearTexture: 0
+    grayScaleToAlpha: 0
+    rGBM: 0
+    cubemapConvolutionSteps: 0
+    cubemapConvolutionExponent: 0
+    maxTextureSizeSet: 0
+    compressionQualitySet: 0
+    textureFormatSet: 0
+    applyGammaDecoding: 0
+  previousAsepriteImporterSettings:
+    fileImportMode: 1
+    importHiddenLayers: 0
+    layerImportMode: 1
+    defaultPivotSpace: 0
+    defaultPivotAlignment: 7
+    customPivotPosition: {x: 0.5, y: 0.5}
+    spritePadding: 0
+    generateModelPrefab: 1
+    generateAnimationClips: 1
+    addSortingGroup: 1
+    addShadowCasters: 0
+  asepriteImporterSettings:
+    fileImportMode: 1
+    importHiddenLayers: 0
+    layerImportMode: 1
+    defaultPivotSpace: 0
+    defaultPivotAlignment: 7
+    customPivotPosition: {x: 0.5, y: 0.5}
+    spritePadding: 0
+    generateModelPrefab: 1
+    generateAnimationClips: 1
+    addSortingGroup: 1
+    addShadowCasters: 0
+  importFileNodeState: 1
+  platformSettingsDirtyTick: 638592106371963217
+  textureAssetName: 
+  singleSpriteImportData:
+  - name: 
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    spriteID: 
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 0, y: 0}
+  animatedSpriteImportData:
+  - name: teleporter_door_Frame_0
+    originalName: 
+    pivot: {x: 0.5, y: -0.08403362}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 4
+      width: 28
+      height: 119
+    spriteID: 618498cabfcaa6d458315be229e8b6a6
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 4}
+  - name: teleporter_door_Frame_1
+    originalName: 
+    pivot: {x: 0.5, y: -0.0940171}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 131
+      width: 28
+      height: 117
+    spriteID: 12f1cc104b9f454439f837cb47cedc21
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 131}
+  - name: teleporter_door_Frame_2
+    originalName: 
+    pivot: {x: 0.5, y: -0.11504425}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 40
+      y: 4
+      width: 28
+      height: 113
+    spriteID: 0bd5358d238d1f842842d95da3c41ba6
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 40, y: 4}
+  - name: teleporter_door_Frame_3
+    originalName: 
+    pivot: {x: 0.5, y: -0.13761468}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 40
+      y: 125
+      width: 28
+      height: 109
+    spriteID: 54ef53d4d99973a458432be317ff07ae
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 40, y: 125}
+  - name: teleporter_door_Frame_4
+    originalName: 
+    pivot: {x: 0.5, y: -0.17307693}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 76
+      y: 4
+      width: 28
+      height: 104
+    spriteID: 8e69b5ad779250e4995b3e35e52f5c6b
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 76, y: 4}
+  - name: teleporter_door_Frame_5
+    originalName: 
+    pivot: {x: 0.5, y: -0.21649484}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 76
+      y: 116
+      width: 28
+      height: 97
+    spriteID: a7b443d371bf6c24ebec5d432e390d3e
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 76, y: 116}
+  - name: teleporter_door_Frame_6
+    originalName: 
+    pivot: {x: 0.5, y: -0.26373628}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 112
+      y: 4
+      width: 28
+      height: 91
+    spriteID: 9c5eba666fd74594880e99af1408b748
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 112, y: 4}
+  - name: teleporter_door_Frame_7
+    originalName: 
+    pivot: {x: 0.5, y: -0.31764707}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 112
+      y: 103
+      width: 28
+      height: 85
+    spriteID: 2159a1231cb66d44dbda38ff002a9685
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 112, y: 103}
+  - name: teleporter_door_Frame_8
+    originalName: 
+    pivot: {x: 0.5, y: -0.37974685}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 148
+      y: 4
+      width: 28
+      height: 79
+    spriteID: 53327b2f006e40f4b944278ab7a18c72
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 148, y: 4}
+  - name: teleporter_door_Frame_9
+    originalName: 
+    pivot: {x: 0.5, y: -0.4520548}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 148
+      y: 91
+      width: 28
+      height: 73
+    spriteID: 4e986ce1c27c9ff49b1b23b6000826fe
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 148, y: 91}
+  - name: teleporter_door_Frame_10
+    originalName: 
+    pivot: {x: 0.5, y: -0.54545456}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 148
+      y: 172
+      width: 28
+      height: 66
+    spriteID: 6763173c1392f5d4c8ff10e7f0a8ae78
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 148, y: 172}
+  - name: teleporter_door_Frame_11
+    originalName: 
+    pivot: {x: 0.5, y: -0.65000004}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 184
+      y: 4
+      width: 28
+      height: 60
+    spriteID: b25b61488ff9ed2468991cb4a29adbf9
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 184, y: 4}
+  - name: teleporter_door_Frame_12
+    originalName: 
+    pivot: {x: 0.5, y: -0.76363635}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 112
+      y: 196
+      width: 28
+      height: 55
+    spriteID: 89feae5be695d364e9240eab62c253e8
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 112, y: 196}
+  spriteSheetImportData: []
+  asepriteLayers:
+  - layerIndex: 0
+    guid: -1006747233
+    name: teleporter_door
+    layerFlags: 0
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: teleporter_door_Frame_0
+      frameIndex: 0
+      cellRect:
+        x: 1
+        y: 10
+        width: 28
+        height: 119
+      spriteId: 618498cabfcaa6d458315be229e8b6a6
+    - name: teleporter_door_Frame_1
+      frameIndex: 1
+      cellRect:
+        x: 1
+        y: 11
+        width: 28
+        height: 117
+      spriteId: 12f1cc104b9f454439f837cb47cedc21
+    - name: teleporter_door_Frame_2
+      frameIndex: 2
+      cellRect:
+        x: 1
+        y: 13
+        width: 28
+        height: 113
+      spriteId: 0bd5358d238d1f842842d95da3c41ba6
+    - name: teleporter_door_Frame_3
+      frameIndex: 3
+      cellRect:
+        x: 1
+        y: 15
+        width: 28
+        height: 109
+      spriteId: 54ef53d4d99973a458432be317ff07ae
+    - name: teleporter_door_Frame_4
+      frameIndex: 4
+      cellRect:
+        x: 1
+        y: 18
+        width: 28
+        height: 104
+      spriteId: 8e69b5ad779250e4995b3e35e52f5c6b
+    - name: teleporter_door_Frame_5
+      frameIndex: 5
+      cellRect:
+        x: 1
+        y: 21
+        width: 28
+        height: 97
+      spriteId: a7b443d371bf6c24ebec5d432e390d3e
+    - name: teleporter_door_Frame_6
+      frameIndex: 6
+      cellRect:
+        x: 1
+        y: 24
+        width: 28
+        height: 91
+      spriteId: 9c5eba666fd74594880e99af1408b748
+    - name: teleporter_door_Frame_7
+      frameIndex: 7
+      cellRect:
+        x: 1
+        y: 27
+        width: 28
+        height: 85
+      spriteId: 2159a1231cb66d44dbda38ff002a9685
+    - name: teleporter_door_Frame_8
+      frameIndex: 8
+      cellRect:
+        x: 1
+        y: 30
+        width: 28
+        height: 79
+      spriteId: 53327b2f006e40f4b944278ab7a18c72
+    - name: teleporter_door_Frame_9
+      frameIndex: 9
+      cellRect:
+        x: 1
+        y: 33
+        width: 28
+        height: 73
+      spriteId: 4e986ce1c27c9ff49b1b23b6000826fe
+    - name: teleporter_door_Frame_10
+      frameIndex: 10
+      cellRect:
+        x: 1
+        y: 36
+        width: 28
+        height: 66
+      spriteId: 6763173c1392f5d4c8ff10e7f0a8ae78
+    - name: teleporter_door_Frame_11
+      frameIndex: 11
+      cellRect:
+        x: 1
+        y: 39
+        width: 28
+        height: 60
+      spriteId: b25b61488ff9ed2468991cb4a29adbf9
+    - name: teleporter_door_Frame_12
+      frameIndex: 12
+      cellRect:
+        x: 1
+        y: 42
+        width: 28
+        height: 55
+      spriteId: 89feae5be695d364e9240eab62c253e8
+    linkedCells: []
+    parentIndex: -1
+  platformSettings:
+  - name: DefaultTexturePlatform
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: Standalone
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: Server
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: WebGL
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  secondarySpriteTextures: []
+  spritePackingTag: 
+  canvasSize: {x: 30, y: 136}
