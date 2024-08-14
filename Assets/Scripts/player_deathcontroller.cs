@@ -14,8 +14,7 @@ public class player_deathcontroller : MonoBehaviour
     private Vector3 boss_origin_pos;
     private void OnTriggerEnter2D(Collider2D other){
         
-        if(other.tag == "Harm"){
-            Debug.Log("dd");
+        if(other.tag == "Harm" || other.tag == "Boss"){
             isDead = true;
             Time.timeScale = 0f;
         }

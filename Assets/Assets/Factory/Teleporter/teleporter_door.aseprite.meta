@@ -2,7 +2,12 @@ fileFormatVersion: 2
 guid: b84d327d02a7ba14bb1df18f318de35e
 ScriptedImporter:
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:AnimationClip
+      assembly: UnityEngine.AnimationModule
+      name: teleporter_door_Clip
+    second: {fileID: 7400000, guid: 49eb6b7c27cc0514cb4eac3fe2959955, type: 2}
   serializedVersion: 2
   userData: 
   assetBundleName: 
@@ -95,7 +100,7 @@ ScriptedImporter:
     addSortingGroup: 1
     addShadowCasters: 0
   importFileNodeState: 1
-  platformSettingsDirtyTick: 638592106371963217
+  platformSettingsDirtyTick: 638592869271053509
   textureAssetName: 
   singleSpriteImportData:
   - name: 

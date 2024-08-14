@@ -2,7 +2,12 @@ fileFormatVersion: 2
 guid: 554d5b07a8b14764596dbb3a728f6010
 ScriptedImporter:
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:AnimationClip
+      assembly: UnityEngine.AnimationModule
+      name: teleporter_mainframe_prepare_Clip
+    second: {fileID: 7400000, guid: 0b244e900ccabfa47a234357fdac2b7d, type: 2}
   serializedVersion: 2
   userData: 
   assetBundleName: 
@@ -95,7 +100,7 @@ ScriptedImporter:
     addSortingGroup: 1
     addShadowCasters: 0
   importFileNodeState: 1
-  platformSettingsDirtyTick: 638592106371953215
+  platformSettingsDirtyTick: 638592869807349192
   textureAssetName: 
   singleSpriteImportData:
   - name: 
