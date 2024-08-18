@@ -5,13 +5,20 @@ using UnityEngine.UI;
 
 public class TextPrint : MonoBehaviour
 {
-    public string iText;
+    private string iText;
+    public string[] texts;
     public Text cText;
     private bool fineprint = false;
+    private int i = 0;
+    private int maxI;
+    private Rigidbody2D player;
+    public bool done;
 
   
-    IEnumerator delay(string text)
+    public IEnumerator delay(string text)
     {
+        
+        cText.text = "";
         foreach(var i in text)
         {       
             cText.text += i;
@@ -19,20 +26,36 @@ public class TextPrint : MonoBehaviour
         }
         
         fineprint = true;
-
+        i++;
     }
           
     void Awake()
     {
+        player = GameObject.FindWithTag("Player").GetComponent<Rigidbody2D>();
+        maxI = texts.Length;
+        iText = texts[i];
         StartCoroutine(delay(iText));
     }
 
     void Update(){
         if(fineprint){
-            if(Input.GetKey(KeyCode.E)){
-                this.gameObject.SetActive(false);
+            if(i < maxI){
+                if(fineprint && Input.GetKeyDown(KeyCode.E)){
+                    fineprint = false;
+                    iText = texts[i];
+                    StartCoroutine(delay(iText));
+                }
+                
             }
+            else{
+                done = true;
+                if(Input.GetKeyDown(KeyCode.E)){
+                    this.gameObject.SetActive(false);
+                }               
+            }
+
         }
+
     }
     
 
