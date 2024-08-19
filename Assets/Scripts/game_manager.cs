@@ -38,24 +38,24 @@ public class game_manager : MonoBehaviour
         //     gameover.SetActive(false);
         // }
 
-        if(Input.GetKeyDown(KeyCode.Alpha1)){
-            GameObject.FindWithTag("Player").transform.position = GameObject.Find("Debug1").transform.position;
-        }
-        else if(Input.GetKeyDown(KeyCode.Alpha2)){
-            GameObject.FindWithTag("Player").transform.position = GameObject.Find("Debug2").transform.position;
-        }
-        else if(Input.GetKeyDown(KeyCode.Alpha3)){
-            GameObject.FindWithTag("Player").transform.position = GameObject.Find("Debug3").transform.position;
-        }
-        else if(Input.GetKeyDown(KeyCode.Alpha4)){
-            GameObject.FindWithTag("Player").transform.position = GameObject.Find("Debug4").transform.position;
-        }
-        else if(Input.GetKeyDown(KeyCode.Alpha5)){
-            GameObject.FindWithTag("Player").transform.position = GameObject.Find("Debug5").transform.position;
-        }
-        else if(Input.GetKeyDown(KeyCode.Alpha6)){
-            GameObject.FindWithTag("Player").transform.position = GameObject.Find("Debug6").transform.position;
-        }
+        // if(Input.GetKeyDown(KeyCode.Alpha1)){
+        //     GameObject.FindWithTag("Player").transform.position = GameObject.Find("Debug1").transform.position;
+        // }
+        // else if(Input.GetKeyDown(KeyCode.Alpha2)){
+        //     GameObject.FindWithTag("Player").transform.position = GameObject.Find("Debug2").transform.position;
+        // }
+        // else if(Input.GetKeyDown(KeyCode.Alpha3)){
+        //     GameObject.FindWithTag("Player").transform.position = GameObject.Find("Debug3").transform.position;
+        // }
+        // else if(Input.GetKeyDown(KeyCode.Alpha4)){
+        //     GameObject.FindWithTag("Player").transform.position = GameObject.Find("Debug4").transform.position;
+        // }
+        // else if(Input.GetKeyDown(KeyCode.Alpha5)){
+        //     GameObject.FindWithTag("Player").transform.position = GameObject.Find("Debug5").transform.position;
+        // }
+        // else if(Input.GetKeyDown(KeyCode.Alpha6)){
+        //     GameObject.FindWithTag("Player").transform.position = GameObject.Find("Debug6").transform.position;
+        // }
         
     }
 

@@ -29,27 +29,27 @@ public class item_selection : MonoBehaviour
     
     void Update()
     {   
-        if (Input.GetKeyDown(KeyCode.Keypad1)){
+        if (Input.GetKeyDown(KeyCode.Alpha1)){
             spacing = Mathf.Abs(GameObject.Find("Slot1").GetComponent<RectTransform>().anchoredPosition.x - GameObject.Find("Slot2").GetComponent<RectTransform>().anchoredPosition.x);
             gameObject.GetComponent<RectTransform>().anchoredPosition = new Vector3(0, 0, 0);
             slotNumber = 1;
         }
-        else if (Input.GetKeyDown(KeyCode.Keypad2)){
+        else if (Input.GetKeyDown(KeyCode.Alpha2)){
             spacing = Mathf.Abs(GameObject.Find("Slot1").GetComponent<RectTransform>().anchoredPosition.x - GameObject.Find("Slot2").GetComponent<RectTransform>().anchoredPosition.x);
             gameObject.GetComponent<RectTransform>().anchoredPosition = new Vector3(spacing, 0, 0);
             slotNumber = 2;
         }
-        else if (Input.GetKeyDown(KeyCode.Keypad3)){
+        else if (Input.GetKeyDown(KeyCode.Alpha3)){
             spacing = Mathf.Abs(GameObject.Find("Slot1").GetComponent<RectTransform>().anchoredPosition.x - GameObject.Find("Slot2").GetComponent<RectTransform>().anchoredPosition.x);
             gameObject.GetComponent<RectTransform>().anchoredPosition = new Vector3(spacing * 2, 0, 0);
             slotNumber = 3;
         }
-        else if (Input.GetKeyDown(KeyCode.Keypad4)){
+        else if (Input.GetKeyDown(KeyCode.Alpha4)){
             spacing = Mathf.Abs(GameObject.Find("Slot1").GetComponent<RectTransform>().anchoredPosition.x - GameObject.Find("Slot2").GetComponent<RectTransform>().anchoredPosition.x);
             gameObject.GetComponent<RectTransform>().anchoredPosition = new Vector3(spacing * 3, 0, 0);
             slotNumber = 4;
         }
-        else if (Input.GetKeyDown(KeyCode.Keypad5)){
+        else if (Input.GetKeyDown(KeyCode.Alpha5)){
             spacing = Mathf.Abs(GameObject.Find("Slot1").GetComponent<RectTransform>().anchoredPosition.x - GameObject.Find("Slot2").GetComponent<RectTransform>().anchoredPosition.x);
             gameObject.GetComponent<RectTransform>().anchoredPosition = new Vector3(spacing * 4, 0, 0);
             slotNumber = 5;
