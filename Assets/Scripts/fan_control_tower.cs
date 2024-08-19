@@ -5,6 +5,12 @@ using UnityEngine;
 public class fan_control_tower : MonoBehaviour
 {
     [SerializeField] bool contacted = false;
+    [SerializeField] private GameObject text_1;
+    [SerializeField] private GameObject text_2;
+    [SerializeField] private GameObject text_3;
+    [SerializeField] private GameObject E;
+
+
     private item_selection item_Selection;
     private inventory inventory;
     public bool turnedOn = false;
@@ -25,16 +31,19 @@ public class fan_control_tower : MonoBehaviour
                     if (inventory.GetItemName(item_Selection.slotNumber) == "Green Keycard"){
                         if (powered){
                             Debug.Log("On");
+                            text_3.SetActive(true);
                             turnedOn = true;
 
                             // Lights
                         }
                         else{
+                            text_2.SetActive(true);
                             Debug.Log("Need Power Supply.");
                         }    
                     }
                     else{
                         Debug.Log("Green Keycard required.");
+                        text_1.SetActive(true);
                     }
                 }
                 else{
@@ -48,6 +57,7 @@ public class fan_control_tower : MonoBehaviour
     {
         if (other.gameObject.tag == "Player"){
             contacted = true;
+            E.SetActive(true);
         }
     }
 
@@ -55,6 +65,8 @@ public class fan_control_tower : MonoBehaviour
     {
         if (other.gameObject.tag == "Player"){
             contacted = false;
+            E.SetActive(false);
+
         }
     }
 }

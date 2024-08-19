@@ -9,6 +9,11 @@ public class power_station : MonoBehaviour
     [SerializeField] AudioSource accessDeniedSFX;
     [SerializeField] AudioSource leverPullSFX;
     [SerializeField] bool contacted = false;
+    [SerializeField] GameObject text;
+    [SerializeField] GameObject text1;
+    [SerializeField] GameObject E;
+
+
     private item_selection item_Selection;
     private inventory inventory;
     private fan_control_tower fan_Control_Tower;
@@ -59,6 +64,7 @@ public class power_station : MonoBehaviour
                     }
                     else{
                         Debug.Log("Yellow Keycard required.");
+                        text1.SetActive(true);
                         accessDeniedSFX.Play();
                     }
                 }
@@ -83,11 +89,13 @@ public class power_station : MonoBehaviour
             blueLight.volumeIntensity -= (impact_volumeIntensity - final_volumeIntensity) / 30;
             yield return new WaitForSeconds(time / 30);
         }
+        text.SetActive(true);
     }
 
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.tag == "Player"){
+            E.SetActive(true);
             contacted = true;
         }
     }
@@ -95,6 +103,7 @@ public class power_station : MonoBehaviour
     void OnTriggerExit2D(Collider2D other)
     {
         if (other.gameObject.tag == "Player"){
+            E.SetActive(false);
             contacted = false;
         }
     }
