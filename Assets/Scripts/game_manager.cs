@@ -38,9 +38,9 @@ public class game_manager : MonoBehaviour
         //     gameover.SetActive(false);
         // }
 
-        // if(Input.GetKeyDown(KeyCode.Alpha1)){
-        //     GameObject.FindWithTag("Player").transform.position = GameObject.Find("Debug1").transform.position;
-        // }
+        if(Input.GetKeyDown(KeyCode.Keypad0)){
+            GameObject.FindWithTag("Player").transform.position = GameObject.Find("Debug1").transform.position;
+        }
         // else if(Input.GetKeyDown(KeyCode.Alpha2)){
         //     GameObject.FindWithTag("Player").transform.position = GameObject.Find("Debug2").transform.position;
         // }
