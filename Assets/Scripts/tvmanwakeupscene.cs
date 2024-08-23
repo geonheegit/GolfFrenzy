@@ -23,6 +23,7 @@ public class tvmanwakeupscene : MonoBehaviour
         basic1.SetActive(true);
         sceneText.SetActive(false);
         sr.sprite = null;
+        player.GetComponent<player_controller>().isStop = false;
         player.GetComponent<SpriteRenderer>().sortingOrder = 1;
 
     }
@@ -62,8 +63,9 @@ public class tvmanwakeupscene : MonoBehaviour
     void Update(){
         if(player == null){
             player = GameObject.FindWithTag("Player");
-            player.GetComponent<SpriteRenderer>().sortingOrder = - 10;
+            player.GetComponent<SpriteRenderer>().sortingOrder = - 100;
             player.transform.position = this.transform.position;
+            player.GetComponent<player_controller>().isStop = true;
         }
 
         if(loop){
