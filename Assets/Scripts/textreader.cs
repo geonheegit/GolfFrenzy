@@ -14,24 +14,29 @@ public class TextPrint : MonoBehaviour
     private int maxI;
     private Rigidbody2D player;
     public bool done;
-
+    [SerializeField] AudioSource typing_SFX;
   
     public IEnumerator delay(string text)
     {
         
         cText.text = "";
-        foreach(var i in text)
-        {       
-            cText.text += i;
-            yield return new WaitForSeconds(0.03f);
+        if (text != "0"){
+            foreach(var i in text)
+            {       
+                cText.text += i;
+                typing_SFX.Play();
+                yield return new WaitForSeconds(0.03f);
+            }
+            
+            fineprint = true;
+            i++;
         }
-        
-        fineprint = true;
-        i++;
     }
           
     void Awake()
     {
+        typing_SFX = transform.parent.GetComponent<AudioSource>();
+        
         player = GameObject.FindWithTag("Player").GetComponent<Rigidbody2D>();
         maxI = texts.Length;
         iText = texts[i];
