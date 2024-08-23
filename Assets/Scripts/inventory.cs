@@ -76,7 +76,7 @@ public class inventory : MonoBehaviour
 
     void Update()
     {
-        // FOR DEBUG (NOT A IN-GAME FUNCTION)
+        // FOR DEBUG (NOT A IN-GAME FUNCTION) FUCKING ERROR GO DIE SIBAL BUG SAEKKI DUL
         // for (int i = 0; i < numberOfItems; i++){
         //     if (items[i] != null){
         //         Debug.Log(items[i].name);

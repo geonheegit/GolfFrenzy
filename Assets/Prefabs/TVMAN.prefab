@@ -129,6 +129,7 @@ MonoBehaviour:
   moveInput: 0
   jumppadHoriVel: 0
   isfly: 0
+  isStop: 0
   rb: {fileID: 2847400040689184824}
   moveSpeed: 8
   jumpPower: 15

@@ -33,7 +33,6 @@ public class fan_control_tower : MonoBehaviour
                             Debug.Log("On");
                             text_3.SetActive(true);
                             turnedOn = true;
-
                             // Lights
                         }
                         else{

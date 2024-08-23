@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class TextPrint : MonoBehaviour
 {
     private string iText;
+    [TextArea]
     public string[] texts;
     public Text cText;
     private bool fineprint = false;
@@ -22,7 +23,7 @@ public class TextPrint : MonoBehaviour
         foreach(var i in text)
         {       
             cText.text += i;
-            yield return new WaitForSeconds(0.1f);
+            yield return new WaitForSeconds(0.03f);
         }
         
         fineprint = true;
@@ -53,6 +54,14 @@ public class TextPrint : MonoBehaviour
                     this.gameObject.SetActive(false);
                 }               
             }
+
+        }
+
+        if(!done){
+            GameObject.FindWithTag("Player").GetComponent<player_controller>().isStop = true;
+        }
+        else{
+            GameObject.FindWithTag("Player").GetComponent<player_controller>().isStop = false;
 
         }
 

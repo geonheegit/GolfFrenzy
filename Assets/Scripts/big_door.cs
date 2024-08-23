@@ -12,11 +12,14 @@ public class big_door : MonoBehaviour
     private inventory inventory;
 
     [SerializeField] GameObject onoff_LED;
+    [SerializeField] GameObject text;
+    [SerializeField] GameObject text1;
+
+
     [SerializeField] GameObject greenKeyCard_verify;
     [SerializeField] GameObject yellowKeyCard_verify;
     [SerializeField] Sprite tagged_img;
 
-    
     private bool greencard;
     private bool yellowcard;
     public bool powered;
@@ -38,48 +41,55 @@ public class big_door : MonoBehaviour
     {
         if (contacted){
             if (Input.GetKeyDown(KeyCode.E)){
-                if (powered){
-                    if (inventory.GetItemName(item_Selection.slotNumber) == "Green Keycard"){
-                        if (!greencard){
-                            greencard = true;
-                            Debug.Log("Green Keycard tagged.");
+                if(GameObject.FindWithTag("FanControlTower").GetComponent<fan_control_tower>().turnedOn == false){
+                    text.SetActive(true);
+                }
+                else{
+                    text1.SetActive(true);
+                    if (powered){
+                        if (inventory.GetItemName(item_Selection.slotNumber) == "Green Keycard"){
+                            if (!greencard){
+                                greencard = true;
+                                Debug.Log("Green Keycard tagged.");
 
-                            // sound
-                            keycardTaggedSFX.Play();
+                                // sound
+                                keycardTaggedSFX.Play();
 
-                            // img
-                            greenKeyCard_verify.GetComponent<SpriteRenderer>().sprite = tagged_img;
+                                // img
+                                greenKeyCard_verify.GetComponent<SpriteRenderer>().sprite = tagged_img;
+                            }
+                            else{
+                                Debug.Log("You already tagged green keycard.");
+                                // notice sound
+                            }
+                        }
+                        else if (inventory.GetItemName(item_Selection.slotNumber) == "Yellow Keycard"){
+                            if (!yellowcard){
+                                yellowcard = true;
+                                Debug.Log("Yellow Keycard tagged.");
+
+                                // sound
+                                keycardTaggedSFX.Play();
+
+                                // img
+                                yellowKeyCard_verify.GetComponent<SpriteRenderer>().sprite = tagged_img;
+                            }
+                            else{
+                                Debug.Log("You already tagged yellow keycard.");
+                                // notice sound
+                            }
                         }
                         else{
-                            Debug.Log("You already tagged green keycard.");
-                            // notice sound
-                        }
-                    }
-                    else if (inventory.GetItemName(item_Selection.slotNumber) == "Yellow Keycard"){
-                        if (!yellowcard){
-                            yellowcard = true;
-                            Debug.Log("Yellow Keycard tagged.");
-
-                            // sound
-                            keycardTaggedSFX.Play();
-
-                            // img
-                            yellowKeyCard_verify.GetComponent<SpriteRenderer>().sprite = tagged_img;
-                        }
-                        else{
-                            Debug.Log("You already tagged yellow keycard.");
-                            // notice sound
+                            Debug.Log("Need to tag both green and yellow keycards to open the door.");
+                            // error sound
                         }
                     }
                     else{
-                        Debug.Log("Need to tag both green and yellow keycards to open the door.");
+                        Debug.Log("Need Power Supply.");
                         // error sound
                     }
                 }
-                else{
-                    Debug.Log("Need Power Supply.");
-                    // error sound
-                }
+
             }
         }
 

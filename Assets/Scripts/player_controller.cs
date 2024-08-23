@@ -15,6 +15,8 @@ public class player_controller : MonoBehaviour
     public float moveInput;
     public float jumppadHoriVel;
     public bool isfly;
+    public bool isStop;
+
 
     private GameObject screenLight;
     private GameObject[] respawnpoints;
@@ -75,49 +77,54 @@ public class player_controller : MonoBehaviour
     void FixedUpdate()
     {
         moveInput = Input.GetAxisRaw("Horizontal");
+        if(!isStop){
+            if(isfly){
+                
+            }
+            else{
+                rb.velocity = new Vector2(moveInput * moveSpeed + jumppadHoriVel, rb.velocity.y);
+            }
 
-        if(isfly){
+            if(is_grounded && Mathf.Abs(moveInput) > 0){ //Walk Animation
+                anim.SetBool("isWalk", true);
+            }
+            else{
+                anim.SetBool("isWalk", false);
+            }
             
+            if(moveInput > 0){ //Flip
+                sr.flipX = false;
+                screenLight.transform.rotation = Quaternion.Euler(0, 0, -90);
+                boxCollider2D.offset = normalColliderOffset;
+            }
+            else if(moveInput < 0){
+                sr.flipX = true;
+                screenLight.transform.rotation = Quaternion.Euler(0, 0, 90);
+                boxCollider2D.offset = new Vector2(normalColliderOffset.x - colliderXOffset, normalColliderOffset.y);
+                
+            }
+
+            if (Input.GetKey(KeyCode.Space) && is_grounded){
+                anim.SetBool("isJump", true);
+                anim.SetBool("isLand", false);
+                is_grounded = false;
+                rb.velocity = new Vector2(rb.velocity.x, 0f);
+                rb.velocity = new Vector2(rb.velocity.x, jumpPower);
+            }
+
+            if(!is_grounded && rb.velocity.y < 0){
+                anim.SetBool("isJump", false);
+                anim.SetBool("isFalling", true);
+            }
+            else
+            {
+                anim.SetBool("isFalling", false);
+            }
         }
         else{
-            rb.velocity = new Vector2(moveInput * moveSpeed + jumppadHoriVel, rb.velocity.y);
+            rb.velocity = new Vector2(0, 0);
         }
 
-        if(is_grounded && Mathf.Abs(moveInput) > 0){ //Walk Animation
-            anim.SetBool("isWalk", true);
-        }
-        else{
-            anim.SetBool("isWalk", false);
-        }
-        
-        if(moveInput > 0){ //Flip
-            sr.flipX = false;
-            screenLight.transform.rotation = Quaternion.Euler(0, 0, -90);
-            boxCollider2D.offset = normalColliderOffset;
-        }
-        else if(moveInput < 0){
-            sr.flipX = true;
-            screenLight.transform.rotation = Quaternion.Euler(0, 0, 90);
-            boxCollider2D.offset = new Vector2(normalColliderOffset.x - colliderXOffset, normalColliderOffset.y);
-            
-        }
-
-        if (Input.GetKey(KeyCode.Space) && is_grounded){
-            anim.SetBool("isJump", true);
-            anim.SetBool("isLand", false);
-            is_grounded = false;
-            rb.velocity = new Vector2(rb.velocity.x, 0f);
-            rb.velocity = new Vector2(rb.velocity.x, jumpPower);
-        }
-
-        if(!is_grounded && rb.velocity.y < 0){
-            anim.SetBool("isJump", false);
-            anim.SetBool("isFalling", true);
-        }
-        else
-        {
-            anim.SetBool("isFalling", false);
-        }
 
     }
 
@@ -130,36 +137,39 @@ public class player_controller : MonoBehaviour
         float length = 0.25f;
         RaycastHit2D hitLeft;
         RaycastHit2D hitRight;
-        if (!sr.flipX){
-            hitLeft = Physics2D.Raycast(rb.position + new Vector2(leftRayPosX, origin), Vector3.down, length, LayerMask.GetMask("Ground"));
-            Debug.DrawRay(rb.position + new Vector2(leftRayPosX, origin), Vector3.down * length, new Color(1, 0, 0));
-            hitRight = Physics2D.Raycast(rb.position + new Vector2(rightRayPosX, origin), Vector3.down, length, LayerMask.GetMask("Ground"));
-            Debug.DrawRay(rb.position + new Vector2(rightRayPosX, origin), Vector3.down * length, new Color(0, 1, 0));
-        }
-        else{
-            hitLeft = Physics2D.Raycast(rb.position + new Vector2(leftRayPosX - rayOffset, length), Vector3.down, length, LayerMask.GetMask("Ground"));
-            Debug.DrawRay(rb.position + new Vector2(leftRayPosX - rayOffset, length), Vector3.down * length, new Color(1, 0, 0));
-            hitRight = Physics2D.Raycast(rb.position + new Vector2(rightRayPosX - rayOffset, length), Vector3.down, length, LayerMask.GetMask("Ground"));
-            Debug.DrawRay(rb.position + new Vector2(rightRayPosX - rayOffset, length), Vector3.down * length, new Color(0, 1, 0));
-        }
+        if(!isStop){
+            if (!sr.flipX){
+                hitLeft = Physics2D.Raycast(rb.position + new Vector2(leftRayPosX, origin), Vector3.down, length, LayerMask.GetMask("Ground"));
+                Debug.DrawRay(rb.position + new Vector2(leftRayPosX, origin), Vector3.down * length, new Color(1, 0, 0));
+                hitRight = Physics2D.Raycast(rb.position + new Vector2(rightRayPosX, origin), Vector3.down, length, LayerMask.GetMask("Ground"));
+                Debug.DrawRay(rb.position + new Vector2(rightRayPosX, origin), Vector3.down * length, new Color(0, 1, 0));
+            }
+            else{
+                hitLeft = Physics2D.Raycast(rb.position + new Vector2(leftRayPosX - rayOffset, length), Vector3.down, length, LayerMask.GetMask("Ground"));
+                Debug.DrawRay(rb.position + new Vector2(leftRayPosX - rayOffset, length), Vector3.down * length, new Color(1, 0, 0));
+                hitRight = Physics2D.Raycast(rb.position + new Vector2(rightRayPosX - rayOffset, length), Vector3.down, length, LayerMask.GetMask("Ground"));
+                Debug.DrawRay(rb.position + new Vector2(rightRayPosX - rayOffset, length), Vector3.down * length, new Color(0, 1, 0));
+            }
 
-        // Debug.Log(hitLeft.collider);
-        // Debug.Log(hitRight.collider);
-        
-        if (hitLeft.collider != null || hitRight.collider != null)
-        {
-            anim.SetBool("isJump", false);
-            anim.SetBool("isLand", true);
-            is_grounded = true;
-            ropeUsed = false;
+            // Debug.Log(hitLeft.collider);
+            // Debug.Log(hitRight.collider);
             
-        }
+            if (hitLeft.collider != null || hitRight.collider != null)
+            {
+                anim.SetBool("isJump", false);
+                anim.SetBool("isLand", true);
+                is_grounded = true;
+                ropeUsed = false;
+                
+            }
 
 
-        if (!is_grounded && Input.GetKeyDown(KeyCode.LeftShift) && !ropeUsed){
-            anim.SetBool("isSpin", true);
-            StartCoroutine(RopeJump());
+            if (!is_grounded && Input.GetKeyDown(KeyCode.LeftShift) && !ropeUsed){
+                anim.SetBool("isSpin", true);
+                StartCoroutine(RopeJump());
+            }
         }
+
 
     }
 }

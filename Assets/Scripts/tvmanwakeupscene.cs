@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class tvmanwakeupscene : MonoBehaviour
 {
     private SpriteRenderer sr;
+    private GameObject player;
     [SerializeField] private Sprite tvmanoff;
     [SerializeField] private Sprite tvmanon_1;
     [SerializeField] private Sprite tvmanon_2;
@@ -22,6 +23,8 @@ public class tvmanwakeupscene : MonoBehaviour
         basic1.SetActive(true);
         sceneText.SetActive(false);
         sr.sprite = null;
+        player.GetComponent<SpriteRenderer>().sortingOrder = 1;
+
     }
     IEnumerator anim(float time, Sprite sp){
         loop = false;
@@ -45,14 +48,24 @@ public class tvmanwakeupscene : MonoBehaviour
     }
 
     void Awake(){
+        
         actonce = true;
         loop = false;
         sr = GetComponent<SpriteRenderer>();
         StartCoroutine(anim(3f, tvmanon_1));
         StartCoroutine(startText(6f, sceneText));
+        
+        
+
     }
     
     void Update(){
+        if(player == null){
+            player = GameObject.FindWithTag("Player");
+            player.GetComponent<SpriteRenderer>().sortingOrder = - 10;
+            player.transform.position = this.transform.position;
+        }
+
         if(loop){
 
 

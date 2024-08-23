@@ -35,6 +35,7 @@ TagManager:
   - Boss
   - Falling Spikes
   - Falling Objects
+  - startboss
   layers:
   - Default
   - TransparentFX
