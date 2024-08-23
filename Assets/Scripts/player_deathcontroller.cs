@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class player_deathcontroller : MonoBehaviour
@@ -9,6 +10,7 @@ public class player_deathcontroller : MonoBehaviour
     public GameObject respawnPos;
     [SerializeField] GameObject falling_spikes_prefab;
     [SerializeField] GameObject falling_objects_prefab;
+    [SerializeField] AudioSource death_SFX;
     private Vector3 falling_spikes_origin_pos;
     private Vector3 falling_objects_origin_pos;
     private Vector3 boss_gears_origin_pos;
@@ -16,6 +18,7 @@ public class player_deathcontroller : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other){
         
         if(other.tag == "Harm" || other.tag == "Boss"){
+            death_SFX.Play();
             isDead = true;
             Time.timeScale = 0f;
         }
@@ -37,6 +40,8 @@ public class player_deathcontroller : MonoBehaviour
     {
         if(isDead){
             deathscene.SetActive(true);
+            
+            
             if(Input.GetKeyDown(KeyCode.R)){
                 Time.timeScale = 1f;
                 isDead = false;
